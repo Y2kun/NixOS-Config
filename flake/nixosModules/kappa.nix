@@ -386,7 +386,7 @@ in {
     #   createHome = true;
     #   home = "/home/yuma";
     #   shell = "${pkgs.fish}/bin/fish";
-    #   hashedPassword = "$y$j9T$oNlXtRUJQNJDNQmHXPWxk1$Y0i0NUdvHVgJA3jVKCGSTO3B3ecZyX5n2ss.v.PoZE7";
+    #   hashedPassword = "$y$j9T$56qD2JdCVL4j0ES1Nmfj.0$.bK7fz0W9uY.S.1om3memBRP9UU90YxJRmUNPMTtCJ1";
     #   extraGroups = [
     #     "adbusers"
     #     "audio"

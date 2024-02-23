@@ -81,7 +81,9 @@ in {
         fish = {
           enable = true;
           shellAliases = {
-            "ls" = "ls -ah";
+            "ls" = "ls -ach";
+            "neofetch" = "fastfetch";
+            "ff" = "fastfetch";
           };
           plugins = [
             {
@@ -263,7 +265,8 @@ in {
 
         displayManager = {
           defaultSession = "plasma";
-          sddm.enable = true;
+          # defaultSession = "plasmawayland";
+          # sddm.wayland.enable = true;
         };
 
         desktopManager = {
@@ -283,8 +286,6 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      itch # many free games
-      dooit # Console To-do list
       alejandra # formats nix files
       anki # learning cards maker and manager for learning
       aseprite # pixel art editor
@@ -294,27 +295,30 @@ in {
       cmake # a c compiler
       comma # runs programms without install
       darkhttpd
+      dooit # Console To-do list
       fd # find files
       file # determines filetypes
       firefox # browser of choice
       fzf # fuzzy file finder
+      gimp # Opensource Photoshop
       git # it's git
       godot_4 # a gameengine
       htop # performance
       inkscape # vectorgraphic editor
+      itch # many free games
       jq # Json formater
       krita # In some ways better than gimp
-      gimp # Opensource Photoshop
       libreoffice # it's libre office
       lite-xl # editor i used for lobster
       magic-wormhole # for transfering data
       marksman # Markdown LSP
       ncdu # manualy find heavy data
-      neofetch # Basic Info about System
+      fastfetch # Basic Info about System
       nixpkgs-unstable.obsidian # where all my personal notes are
       nixpkgs-unstable.signal-desktop # a messenging app
       obs-studio # screenrecorder
       openshot-qt # video editor
+      pavucontrol # audio manager
       plasma5Packages.kdeplasma-addons
       plasma5Packages.kmail
       prismlauncher # My minecraft instance manager of choice
@@ -411,6 +415,11 @@ in {
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+
+    # programs.nix-index = {
+    #   enable = true;
+    #   enableFishIntegration = true;
+    # };
 
     swapDevices = [];
     environment.homeBinInPath = true;
