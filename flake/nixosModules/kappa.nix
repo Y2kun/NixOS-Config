@@ -114,7 +114,7 @@ in {
     # ltrace
     # lunar-client
     # lxmenu-data # show installed applications when opening file
-    # mkpasswd
+    # mkpasswd # embeded
     # neovim
     # netcat-openbsd
     # nettools
@@ -133,115 +133,112 @@ in {
     # pcmanfm
     # pgcli
     # pixelorama
-    # plasma5Packages.akonadi
-    # plasma5Packages.akregator
-    # plasma5Packages.ark
-    # plasma5Packages.bluedevil
-    # plasma5Packages.bovo
-    # plasma5Packages.breeze-grub
-    # plasma5Packages.breeze-gtk
-    # plasma5Packages.breeze-icons
-    # plasma5Packages.breeze-plymouth
-    # plasma5Packages.breeze-qt5
-    # plasma5Packages.discover
-    # plasma5Packages.dolphin
-    # plasma5Packages.dragon
-    # plasma5Packages.elisa
-    # plasma5Packages.ffmpegthumbs
-    # plasma5Packages.filelight
-    # plasma5Packages.granatier
-    # plasma5Packages.gwenview
-    # plasma5Packages.k3b
-    # plasma5Packages.kactivitymanagerd
-    # plasma5Packages.kaddressbook
-    # plasma5Packages.kalzium
-    # plasma5Packages.kapman
-    # plasma5Packages.kapptemplate
-    # plasma5Packages.kate
-    # plasma5Packages.katomic
-    # plasma5Packages.kblackbox
-    # plasma5Packages.kblocks
-    # plasma5Packages.kbounce
-    # plasma5Packages.kcachegrind
-    # plasma5Packages.kcalc
-    # plasma5Packages.kcharselect
-    # plasma5Packages.kcolorchooser
-    # plasma5Packages.kde-cli-tools
-    # plasma5Packages.kde-gtk-config
-    # plasma5Packages.kdenlive
-    # plasma5Packages.kdf
-    # plasma5Packages.kdialog
-    # plasma5Packages.kdiamond
-    # plasma5Packages.keditbookmarks
-    # plasma5Packages.kfind
-    # plasma5Packages.kfloppy
-    # plasma5Packages.kgamma5
-    # plasma5Packages.kget
-    # plasma5Packages.kgpg
-    # plasma5Packages.khelpcenter
-    # plasma5Packages.kig
-    # plasma5Packages.kigo
-    # plasma5Packages.killbots
-    # plasma5Packages.kinfocenter
-    # plasma5Packages.kitinerary
-    # plasma5Packages.kleopatra
-    # plasma5Packages.klettres
-    # plasma5Packages.klines
-    # plasma5Packages.kmag
-    # plasma5Packages.kmenuedit
-    # plasma5Packages.kmines
-    # plasma5Packages.kmix
-    # plasma5Packages.kmplot
-    # plasma5Packages.knavalbattle
-    # plasma5Packages.knetwalk
-    # plasma5Packages.knights
-    # plasma5Packages.kollision
-    # plasma5Packages.kolourpaint
-    # plasma5Packages.kompare
-    # plasma5Packages.konsole
-    # plasma5Packages.kontact
-    # plasma5Packages.korganizer
-    # plasma5Packages.kpkpass
-    # plasma5Packages.krdc
-    # plasma5Packages.kreversi
-    # plasma5Packages.krfb
-    # plasma5Packages.krohnkite
-    # plasma5Packages.kscreen
-    # plasma5Packages.kscreenlocker
-    # plasma5Packages.kshisen
-    # plasma5Packages.ksshaskpass
-    # plasma5Packages.ksystemlog
-    # plasma5Packages.kwallet-pam
-    # plasma5Packages.kwave
-    # plasma5Packages.kwayland-integration
-    # plasma5Packages.kwin
-    # plasma5Packages.kwrited
-    # plasma5Packages.libksysguard
-    # plasma5Packages.marble
-    # plasma5Packages.milou
-    # plasma5Packages.minuet
-    # plasma5Packages.okular
-    # plasma5Packages.oxygen
-    # plasma5Packages.oxygen-icons5
-    # plasma5Packages.picmi
-    # plasma5Packages.plasma-browser-integration
-    # plasma5Packages.plasma-desktop
-    # plasma5Packages.plasma-integration
-    # plasma5Packages.plasma-nm
-    # plasma5Packages.plasma-pa
-    # plasma5Packages.plasma-systemmonitor
-    # plasma5Packages.plasma-thunderbolt
-    # plasma5Packages.plasma-vault
-    # plasma5Packages.plasma-workspace
-    # plasma5Packages.plasma-workspace-wallpapers
-    # plasma5Packages.polkit-kde-agent
-    # plasma5Packages.powerdevil
-    # plasma5Packages.qqc2-breeze-style
-    # plasma5Packages.sddm-kcm
-    # plasma5Packages.spectacle
-    # plasma5Packages.systemsettings
-    # plasma5Packages.xdg-desktop-portal-kde
-    # plasma5Packages.yakuake
+    # akonadi
+    # akregator
+    # ark
+    # bluedevil
+    # bovo
+    # breeze-grub
+    # breeze-gtk
+    # breeze-icons
+    # breeze-plymouth
+    # breeze-qt5
+    # discover
+    # dragon
+    # ffmpegthumbs
+    # filelight
+    # granatier
+    # gwenview # embeded in KDE Plasma
+    # k3b
+    # kactivitymanagerd
+    # kaddressbook
+    # kalzium
+    # kapman
+    # kapptemplate
+    # kate
+    # katomic
+    # kblackbox
+    # kblocks
+    # kbounce
+    # kcachegrind
+    # kcalc
+    # kcharselect
+    # kcolorchooser
+    # kde-cli-tools
+    # kde-gtk-config
+    # kdenlive
+    # kdf
+    # kdialog
+    # kdiamond
+    # keditbookmarks
+    # kfind
+    # kfloppy
+    # kgamma5
+    # kget
+    # kgpg
+    # khelpcenter
+    # kig
+    # kigo
+    # killbots
+    # kinfocenter
+    # kitinerary
+    # kleopatra
+    # klettres
+    # klines
+    # kmag
+    # kmenuedit
+    # kmines
+    # kmix
+    # kmplot
+    # knavalbattle
+    # knetwalk
+    # knights
+    # kollision
+    # kolourpaint
+    # kompare
+    # kontact
+    # korganizer
+    # kpkpass
+    # krdc
+    # kreversi
+    # krfb
+    # krohnkite
+    # kscreen
+    # kscreenlocker
+    # kshisen
+    # ksshaskpass
+    # ksystemlog
+    # kwallet-pam
+    # kwave
+    # kwayland-integration
+    # kwin
+    # kwrited
+    # libksysguard
+    # marble
+    # milou
+    # minuet
+    # okular
+    # oxygen
+    # oxygen-icons5
+    # picmi
+    # plasma-browser-integration
+    # plasma-desktop
+    # plasma-integration
+    # plasma-nm
+    # plasma-pa
+    # plasma-systemmonitor
+    # plasma-thunderbolt
+    # plasma-vault
+    # plasma-workspace
+    # plasma-workspace-wallpapers
+    # polkit-kde-agent
+    # powerdevil
+    # qqc2-breeze-style
+    # sddm-kcm
+    # spectacle
+    # systemsettings
+    # xdg-desktop-portal-kde
+    # yakuake
     # pmount
     # pmutils
     # powertop
@@ -266,8 +263,7 @@ in {
     # tty-share
     # up
     # usbutils
-    # wget
-    # which
+    # which # embeded
     # xarchiver
     # xdg_utils
     # xfsprogs
@@ -275,7 +271,6 @@ in {
     # xorg.xhost
     # xorg.xwininfo
     # yq
-    # zanshin
     # }
 
     boot = {

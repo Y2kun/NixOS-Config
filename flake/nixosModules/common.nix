@@ -337,6 +337,7 @@ in {
       vlc # plays media
       vscodium # code editor
       watchexec # execute something when something
+      wget # installing from url
       zip # zips something
     ];
 
