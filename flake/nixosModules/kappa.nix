@@ -119,7 +119,6 @@ in {
     # netcat-openbsd
     # nettools
     # ngrok
-    # nix-index
     # nixpkgs-unstable.electron_25
     # nix-prefetch-scripts
     # nix-top

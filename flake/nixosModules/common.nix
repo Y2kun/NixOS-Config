@@ -17,6 +17,7 @@ in {
         fcitx5.addons = with pkgs; [fcitx5-configtool fcitx5-anthy];
         ibus.panel = "${pkgs.plasma5Packages.plasma-desktop}/lib/libexec/kimpanel-ibus-panel";
       };
+
       extraLocaleSettings = {
         LC_ADDRESS = "de_AT.utf8";
         LC_IDENTIFICATION = "de_AT.utf8";
@@ -71,9 +72,9 @@ in {
         flameshot.enable = true;
         pasystray.enable = true;
       };
+
       programs = {
         home-manager.enable = true;
-        command-not-found.enable = true;
         gh.enable = true;
         btop.enable = true;
 
@@ -82,9 +83,15 @@ in {
           enable = true;
           shellAliases = {
             "ls" = "ls -ach";
-            "neofetch" = "fastfetch";
-            "ff" = "fastfetch";
+            # "neofetch" = "fastfetch";
+            # "ff" = "fastfetch";
           };
+
+          interactiveShellInit = ''
+            set fish_greeting # Disable greeting
+          '';
+
+          loginShellInit = "fastfetch";
           plugins = [
             {
               name = "zoxide.fish";
@@ -254,8 +261,6 @@ in {
       # };
 
       xserver = {
-        # desktopManager.plasma5.enable = true;
-        # displayManager.defaultSession = "plasmawayland";
         enable = true;
         autorun = true;
         exportConfiguration = true;
@@ -266,7 +271,10 @@ in {
         displayManager = {
           defaultSession = "plasma";
           # defaultSession = "plasmawayland";
-          # sddm.wayland.enable = true;
+          sddm = {
+            enable = true;
+            # wayland.enable = true;
+          };
         };
 
         desktopManager = {
@@ -285,6 +293,10 @@ in {
       };
     };
 
+    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+      konsole
+    ];
+
     environment.systemPackages = with pkgs; [
       alejandra # formats nix files
       anki # learning cards maker and manager for learning
@@ -293,7 +305,7 @@ in {
       bat # returns file content like cat, looks better
       blender # for making 3d stuff
       cmake # a c compiler
-      comma # runs programms without install
+      comma # runs programs without install
       darkhttpd
       dooit # Console To-do list
       fd # find files
@@ -310,8 +322,10 @@ in {
       krita # In some ways better than gimp
       libreoffice # it's libre office
       lite-xl # editor i used for lobster
+      # lutris # Games launcher
       magic-wormhole # for transfering data
       marksman # Markdown LSP
+      # morgen # calendar
       ncdu # manualy find heavy data
       fastfetch # Basic Info about System
       nixpkgs-unstable.obsidian # where all my personal notes are
@@ -411,27 +425,28 @@ in {
       in "${json}";
     };
 
-    programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
+    programs = {
+      steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+      };
 
-    # programs.nix-index = {
-    #   enable = true;
-    #   enableFishIntegration = true;
-    # };
+      nix-index = {
+        enable = true;
+        enableFishIntegration = true;
+      };
+
+      command-not-found.enable = false;
+    };
 
     swapDevices = [];
     environment.homeBinInPath = true;
     nixpkgs.config.allowUnfree = true;
 
-    # Enable sound with pipewire.
-    # nixpkgs.config.pulseaudio = true;
-    # sound.enable = true;
-
+    # Sound
+    sound.enable = true;
     security.rtkit.enable = true;
-
     services.pipewire = {
       enable = true;
       socketActivation = true;
