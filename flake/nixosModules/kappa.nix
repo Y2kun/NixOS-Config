@@ -277,6 +277,7 @@ in {
         enable = true;
         device = "/dev/disk/by-id/ata-TS480GSSD220S_B915817AE427622F0618";
       };
+
       vesa = true;
       binfmt.emulatedSystems = ["aarch64-linux"];
     };
