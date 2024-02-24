@@ -154,18 +154,18 @@ in {
     };
 
     services = {
-      colord.enable = true;
       accounts-daemon.enable = true;
       atd.enable = true;
+      colord.enable = true;
       devmon.enable = true;
+      flatpak.enable = true;
       fstrim.enable = true;
       fwupd.enable = true;
       gnome.at-spi2-core.enable = true;
-      udisks2.enable = true;
-      # printing.enable = true;
       gnome.gnome-keyring.enable = true;
-      flatpak.enable = true;
+      # printing.enable = true;
       radicale.enable = false;
+      udisks2.enable = true;
 
       openssh = {
         enable = true;
