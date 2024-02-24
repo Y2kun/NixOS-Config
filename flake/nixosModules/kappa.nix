@@ -38,6 +38,13 @@ in {
       kernel.sysctl."kernel.sysrq" = 16;
       tmp.cleanOnBoot = true;
       kernelModules = ["kvm-intel" "uinput" "i2c_dev"];
+      loader.grub = {
+        enable = true;
+        device = "/dev/disk/by-id/ata-TS480GSSD220S_B915817AE427622F0618";
+      };
+
+      vesa = true;
+      binfmt.emulatedSystems = ["aarch64-linux"];
     };
 
     environment.systemPackages = with pkgs; [
@@ -58,7 +65,6 @@ in {
     # bc
     # bind
     # binutils
-    # bitwarden-cli
     # blueman
     # bottom
     # break-time
@@ -80,11 +86,9 @@ in {
     # dvdauthor
     # elvish
     # exfat
-    # falkon
     # ffmpeg-full
     # frei0r
     # gdb
-    # gh
     # ghq
     # gsmartcontrol
     # guitarix
@@ -154,7 +158,6 @@ in {
     # kalzium
     # kapman
     # kapptemplate
-    # kate
     # katomic
     # kblackbox
     # kblocks
@@ -271,16 +274,6 @@ in {
     # xorg.xwininfo
     # yq
     # }
-
-    boot = {
-      loader.grub = {
-        enable = true;
-        device = "/dev/disk/by-id/ata-TS480GSSD220S_B915817AE427622F0618";
-      };
-
-      vesa = true;
-      binfmt.emulatedSystems = ["aarch64-linux"];
-    };
 
     services = {
       resolved = {
@@ -426,6 +419,8 @@ in {
     };
 
     security = {
+      audit.enable = false;
+
       pam = {
         loginLimits = [
           {
@@ -436,30 +431,29 @@ in {
           }
         ];
       };
-      audit.enable = false;
-    };
 
-    security.wrappers = {
-      pmount = {
-        source = "${pkgs.pmount}/bin/pmount";
-        owner = "root";
-        group = "root";
-        setuid = true;
-      };
+      wrappers = {
+        pmount = {
+          source = "${pkgs.pmount}/bin/pmount";
+          owner = "root";
+          group = "root";
+          setuid = true;
+        };
 
-      pumount = {
-        source = "${pkgs.pmount}/bin/pumount";
-        owner = "root";
-        group = "root";
-        setuid = true;
+        pumount = {
+          source = "${pkgs.pmount}/bin/pumount";
+          owner = "root";
+          group = "root";
+          setuid = true;
+        };
       };
     };
 
     # programs = {
-    # adb.enable = true;
-    # dconf.enable = true;
-    # mosh.enable = true;
-    # gnupg.agent.pinentryFlavor = "qt";
+    #   adb.enable = true;
+    #   dconf.enable = true;
+    #   mosh.enable = true;
+    #   gnupg.agent.pinentryFlavor = "qt";
     # };
 
     # FIXME: Ugly hack to make home-manager obey??
