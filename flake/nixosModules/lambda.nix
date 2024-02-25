@@ -48,7 +48,7 @@
       protonvpn-gui
       qemu
       teams-for-linux
-      virtmanager
+      virt-manager
     ];
 
     home-manager.users.yuma = _: {
