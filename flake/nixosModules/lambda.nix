@@ -46,8 +46,9 @@
       nodejs_21
       osu-lazer-bin
       protonvpn-gui
-      teams-for-linux
       qemu
+      teams-for-linux
+      virtmanager
     ];
 
     home-manager.users.yuma = _: {
