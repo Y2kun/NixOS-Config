@@ -24,6 +24,7 @@
       fprintd.enable = true;
       # Enable touchpad support (enabled default in most desktopManager).
       xserver.libinput.enable = true;
+      touchegg.enable = true;
     };
 
     users.users.yuma = {
