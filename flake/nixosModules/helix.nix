@@ -46,6 +46,13 @@
         };
       };
 
+      themes = {
+        tokyonight_transparent = {
+          "inherits" = "tokyonight";
+          "ui.background" = {};
+        };
+      };
+
       languages = {
         language-server.c-sharp = {
           command = "omnisharp";
@@ -75,12 +82,6 @@
             };
           }
         ];
-      };
-      themes = {
-        tokyonight_transparent = {
-          "inherits" = "tokyonight";
-          "ui.background" = {};
-        };
       };
     };
   };
