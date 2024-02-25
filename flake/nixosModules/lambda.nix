@@ -19,6 +19,8 @@
     };
 
     services = {
+      avahi.enable = true;
+
       fprintd.enable = true;
       # Enable touchpad support (enabled default in most desktopManager).
       xserver.libinput.enable = true;
@@ -38,7 +40,9 @@
 
     environment.systemPackages = with pkgs; [
       armcord
-      chromium
+      (chromium.override {
+        commandLineArgs = "--load-media-component-extension=1";
+      })
       docker
       docker-client
       docker-compose
