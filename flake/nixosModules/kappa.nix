@@ -397,7 +397,10 @@ in {
       cpuFreqGovernor = lib.mkDefault "ondemand";
     };
 
-    xdg.portal.enable = true;
+    xdg = {
+      portal.enable = true;
+      portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    };
 
     hardware = {
       enableRedistributableFirmware = true;
@@ -409,6 +412,8 @@ in {
         enable = true;
         extraPackages32 = [pkgs.pkgsi686Linux.libva];
       };
+
+      nvidia.modesetting.enable = true;
 
       steam-hardware.enable = true;
 

@@ -262,6 +262,7 @@ in {
       starship # give helpful information and looks cool
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
+      tauon
       tree # lists directory as a tree
       units # converts units
       unzip # unzips something
