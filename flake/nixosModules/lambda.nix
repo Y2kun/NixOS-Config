@@ -48,7 +48,6 @@
       docker-client
       docker-compose
       logisim-evolution
-      nodejs_21
       osu-lazer-bin
       protonvpn-gui
       qemu

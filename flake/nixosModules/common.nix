@@ -83,6 +83,12 @@ in {
         gh.enable = true;
         btop.enable = true;
 
+        git = {
+          enable = true;
+          userName = "Y2kun";
+          userEmail = "me@y2kun.dev";
+        };
+
         zoxide.enable = true;
         fish = {
           enable = true;
@@ -230,7 +236,6 @@ in {
       firefox # browser of choice
       fzf # fuzzy file finder
       gimp # Opensource Photoshop
-      git # it's git
       godot_4 # a gameengine
       htop # performance
       inkscape # vectorgraphic editor
