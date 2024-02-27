@@ -75,11 +75,11 @@
             };
           }
         ];
-        themes = {
-          tokyonight_transparent = {
-            "inherits" = "tokyonight";
-            "ui.background" = {};
-          };
+      };
+      themes = {
+        tokyonight_transparent = {
+          "inherits" = "tokyonight";
+          "ui.background" = {};
         };
       };
     };
