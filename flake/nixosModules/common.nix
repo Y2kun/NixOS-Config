@@ -89,6 +89,18 @@ in {
           userEmail = "me@y2kun.dev";
         };
 
+        # lf = {
+        #   enable = true;
+
+        #   setting = {
+        #     preview = true;
+        #     hidden = true;
+        #     drawbox = true;
+        #     # icons = true;
+        #     ignorecase = true;
+        #   };
+        # };
+
         zoxide.enable = true;
         fish = {
           enable = true;
@@ -253,6 +265,7 @@ in {
       nixpkgs-unstable.obsidian # where all my personal notes are
       nixpkgs-unstable.signal-desktop # a messenging app
       obs-studio # screenrecorder
+      openrgb # controlls the color of peripheral devices
       openshot-qt # video editor
       pavucontrol # audio manager
       plasma5Packages.kdeplasma-addons
@@ -289,10 +302,10 @@ in {
       OMNISHARPHOME = let
         omnisharp-configuration = {
           FormattingOptions = {
-            EnableEditorConfigSupport = false;
-            OrganizeImports = false;
+            EnableEditorConfigSupport = true;
+            OrganizeImports = true;
             NewLine = "\n";
-            UseTabs = false;
+            UseTabs = true;
             TabSize = 4;
             IndentationSize = 4;
             SpacingAfterMethodDeclarationName = false;
@@ -320,7 +333,7 @@ in {
             SpaceBeforeSemicolonsInForStatement = false;
             SpacingAroundBinaryOperator = "single";
             IndentBraces = false;
-            IndentBlock = true;
+            IndentBlock = false;
             IndentSwitchSection = true;
             IndentSwitchCaseSection = true;
             IndentSwitchCaseSectionWhenBlock = true;
