@@ -105,7 +105,8 @@ in {
         fish = {
           enable = true;
           shellAliases = {
-            "ls" = "ls -ach";
+            # "ls" = "ls -ach";
+            "ls" = "eza";
             # "neofetch" = "fastfetch";
             # "ff" = "fastfetch";
           };
@@ -247,6 +248,7 @@ in {
       file # determines filetypes
       firefox # browser of choice
       fzf # fuzzy file finder
+      eza # modern ls
       gimp # Opensource Photoshop
       godot_4 # a gameengine
       htop # performance
@@ -280,7 +282,8 @@ in {
       starship # give helpful information and looks cool
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
-      tauon
+      tauon # music player
+      tig # display the commit history of a git repo
       tree # lists directory as a tree
       units # converts units
       unzip # unzips something
@@ -288,6 +291,7 @@ in {
       vscodium # code editor
       watchexec # execute something when something
       wget # installing from url
+      xdotool # automate inputs
       zip # zips something
     ];
 
