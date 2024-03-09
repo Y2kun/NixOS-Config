@@ -106,7 +106,7 @@ in {
           enable = true;
           shellAliases = {
             # "ls" = "ls -ach";
-            "eza" = "eza -a"
+            "eza" = "eza -a";
             "ls" = "eza";
             # "neofetch" = "fastfetch";
             "ff" = "fastfetch";
