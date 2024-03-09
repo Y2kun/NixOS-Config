@@ -234,6 +234,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       alejandra # formats nix files
+      amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning
       aseprite # pixel art editor
       audacity # for editing audio
@@ -241,8 +242,9 @@ in {
       blender # for making 3d stuff
       cmake # a c compiler
       comma # runs programs without install
-      darkhttpd
+      darkhttpd # for running html websites
       dooit # Console To-do list
+      fastfetch # Basic Info about System
       fd # find files
       file # determines filetypes
       firefox # browser of choice
@@ -261,7 +263,6 @@ in {
       marksman # Markdown LSP
       # morgen # calendar
       ncdu # manualy find heavy data
-      fastfetch # Basic Info about System
       nixpkgs-unstable.obsidian # where all my personal notes are
       nixpkgs-unstable.signal-desktop # a messenging app
       obs-studio # screenrecorder
@@ -280,7 +281,8 @@ in {
       starship # give helpful information and looks cool
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
-      tauon
+      tauon # music player
+      tig # for vieving git history
       tree # lists directory as a tree
       units # converts units
       unzip # unzips something

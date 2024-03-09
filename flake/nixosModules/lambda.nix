@@ -44,6 +44,7 @@
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
       })
+      # discordo
       docker
       docker-client
       docker-compose
@@ -53,6 +54,7 @@
       qemu
       teams-for-linux
       virt-manager
+      wine
     ];
 
     home-manager.users.yuma = _: {
