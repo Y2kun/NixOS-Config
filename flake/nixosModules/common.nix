@@ -245,12 +245,14 @@ in {
       comma # runs programs without install
       darkhttpd
       dooit # Console To-do list
+      eza # modern ls
+      fastfetch # Basic Info about System
       fd # find files
       file # determines filetypes
       firefox # browser of choice
       fzf # fuzzy file finder
-      eza # modern ls
       gimp # Opensource Photoshop
+      gitui # similar to github but from terminal
       godot_4 # a gameengine
       htop # performance
       inkscape # vectorgraphic editor
@@ -263,8 +265,8 @@ in {
       magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
+      musikcube # Music player from Command-line
       ncdu # manualy find heavy data
-      fastfetch # Basic Info about System
       nixpkgs-unstable.obsidian # where all my personal notes are
       nixpkgs-unstable.signal-desktop # a messenging app
       obs-studio # screenrecorder
@@ -280,11 +282,12 @@ in {
       ripgrep # find specific stuff, looks and functions better than fd
       ruby # high level object oriented language
       rubyPackages.solargraph # lsp for ruby
+      speedtest-rs # Intertet speed test with a few extra infos
       starship # give helpful information and looks cool
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
       tauon # music player
-      tig # display the commit history of a git repo
+      tig # display the commit history of a git repo, installed for my father
       tree # lists directory as a tree
       units # converts units
       unzip # unzips something
@@ -292,6 +295,7 @@ in {
       vscodium # code editor
       watchexec # execute something when something
       wget # installing from url
+      wiki-tui # Wikip@edia but from the terminal
       xdotool # automate inputs
       zip # zips something
     ];
