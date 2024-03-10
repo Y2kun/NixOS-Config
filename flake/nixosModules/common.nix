@@ -246,10 +246,7 @@ in {
       comma # runs programs without install
       darkhttpd # for running html websites
       dooit # Console To-do list
-<<<<<<< HEAD
       eza # modern ls
-=======
->>>>>>> refs/remotes/origin/main
       fastfetch # Basic Info about System
       fd # find files
       file # determines filetypes
@@ -291,11 +288,7 @@ in {
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
       tauon # music player
-<<<<<<< HEAD
       tig # display the commit history of a git repo, installed for my father
-=======
-      tig # for vieving git history
->>>>>>> refs/remotes/origin/main
       tree # lists directory as a tree
       units # converts units
       unzip # unzips something
