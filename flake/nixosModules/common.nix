@@ -44,6 +44,7 @@ in {
       noto-fonts-emoji
       fira
       fira-code
+      # fira-code-nerd
       fira-code-symbols
       fira-mono
     ];
@@ -52,7 +53,7 @@ in {
       monospace = ["Fira Code" "IPAGothic"];
       sansSerif = ["DejaVu Sans" "IPAPGothic"];
       serif = ["DejaVu Serif" "IPAPMincho"];
-      emoji = ["Noto Color Emoji"];
+      emoji = ["Noto Fonts Emoji"];
     };
 
     time.timeZone = "Europe/Vienna";
@@ -106,7 +107,7 @@ in {
           enable = true;
           shellAliases = {
             # "ls" = "ls -ach";
-            "eza" = "eza -a";
+            "eza" = "eza -a --icons";
             "ls" = "eza";
             "neofetch" = "fastfetch";
             "ff" = "fastfetch";
