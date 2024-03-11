@@ -233,7 +233,6 @@ in {
     environment.plasma5.excludePackages = with pkgs.libsForQt5; [
       konsole
       oxygen
-      htop
       spectacle
     ];
 
@@ -258,7 +257,7 @@ in {
       gimp # Opensource Photoshop
       gitui # similar to github but from terminal
       godot_4 # a gameengine
-      htop # performance
+      # htop # performance
       inkscape # vectorgraphic editor
       itch # many free games
       jq # Json formater
