@@ -108,7 +108,7 @@ in {
             # "ls" = "ls -ach";
             "eza" = "eza -a";
             "ls" = "eza";
-            # "neofetch" = "fastfetch";
+            "neofetch" = "fastfetch";
             "ff" = "fastfetch";
           };
 
@@ -116,7 +116,7 @@ in {
             set fish_greeting # Disable greeting
           '';
 
-          loginShellInit = "fastfetch";
+          loginShellInit = "pfetch";
           plugins = [
             {
               name = "zoxide.fish";
@@ -232,6 +232,9 @@ in {
 
     environment.plasma5.excludePackages = with pkgs.libsForQt5; [
       konsole
+      oxygen
+      htop
+      spectacle
     ];
 
     environment.systemPackages = with pkgs; [
@@ -274,6 +277,7 @@ in {
       openrgb # controlls the color of peripheral devices
       openshot-qt # video editor
       pavucontrol # audio manager
+      pfetch # small, fast neofetch, for shell init
       plasma5Packages.kdeplasma-addons
       plasma5Packages.kmail
       prismlauncher # My minecraft instance manager of choice
@@ -296,7 +300,7 @@ in {
       vscodium # code editor
       watchexec # execute something when something
       wget # installing from url
-      wiki-tui # Wikip@edia but from the terminal
+      wiki-tui # Wikipedia but from the terminal
       xdotool # automate inputs
       zip # zips something
     ];
