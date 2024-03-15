@@ -65,7 +65,7 @@ in {
       createHome = true;
       home = "/home/yuma";
       description = "Yuma Fellinger";
-      extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video"];
+      extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video" "pulsaudio"];
       hashedPassword = "$y$j9T$oNlXtRUJQNJDNQmHXPWxk1$Y0i0NUdvHVgJA3jVKCGSTO3B3ecZyX5n2ss.v.PoZE7";
       shell = "${pkgs.fish}/bin/fish";
     };
@@ -211,13 +211,14 @@ in {
           # defaultSession = "plasmawayland";
           sddm = {
             enable = true;
-            # wayland.enable = true;
+            wayland.enable = true;
           };
         };
 
         desktopManager = {
-          plasma5.enable = true;
-          plasma5.runUsingSystemd = true;
+          plasma6.enable = true;
+          # plasma5.enable = true;
+          # plasma6.runUsingSystemd = true;
         };
 
         layout = "jp";
@@ -231,7 +232,42 @@ in {
       };
     };
 
-    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    # programs.hyprland = {
+    #   enable = true;
+    #   xwayland.hidpi = true;
+    #   xwayland.enable = true;
+    # };
+
+    # # Hint Electon apps to use wayland
+    # environment.sessionVariables = {
+    #   NIXOS_OZONE_WL = "1";
+    # };
+
+    # services.dbus.enable = true;
+    # xdg.portal = {
+    #   enable = true;
+    #   wlr.enable = true;
+    #   extraPortals = [
+    #     pkgs.xdg-desktop-portal-gtk
+    #   ];
+    # };
+
+    # environment.systemPackages = with pkgs; [
+    #   xwayland
+    #   xdg-desktop-portal-gtk
+    #   xdg-desktop-portal-hyprland
+    #   dust
+    #   wofi
+    #   networkmanagerapplet
+    #   meson
+    #   wayland-protocol
+    #   wayland-utils
+    #   wl-clipboard
+    #   wlroots
+    #   swww
+    # ];
+
+    environment.plasma6.excludePackages = with pkgs.libsForQt5; [
       konsole
       oxygen
       spectacle
@@ -245,10 +281,12 @@ in {
       audacity # for editing audio
       bat # returns file content like cat, looks better
       blender # for making 3d stuff
-      cmake # a c compiler
+      catnip # audio visualizer
+      whatsapp-for-linux
+      # cmake # a c compiler
       comma # runs programs without install
       darkhttpd # for running html websites
-      dooit # Console To-do list
+      # dooit # Console To-do list
       eza # modern ls
       fastfetch # Basic Info about System
       fd # find files
@@ -264,7 +302,7 @@ in {
       jq # Json formater
       krita # In some ways better than gimp
       libreoffice # it's libre office
-      lite-xl # editor i used for lobster
+      # lite-xl # editor i used for lobster
       # lutris # Games launcher
       magic-wormhole # for transfering data
       marksman # Markdown LSP
@@ -301,7 +339,9 @@ in {
       watchexec # execute something when something
       wget # installing from url
       wiki-tui # Wikipedia but from the terminal
+      wpsoffice # Libre office alternative
       xdotool # automate inputs
+      zellij # Terminal Partitioner
       zip # zips something
     ];
 
@@ -388,6 +428,7 @@ in {
       };
 
       command-not-found.enable = false;
+      dconf.enable = true;
     };
 
     swapDevices = [];
