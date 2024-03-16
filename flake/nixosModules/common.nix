@@ -71,7 +71,10 @@ in {
     };
 
     home-manager.users.yuma = _: {
-      imports = [self.homeModules.helix];
+      imports = [
+        self.nixosModules.helix
+        self.nixosModules.hyprland
+      ];
       home.packages = with pkgs; [plasma-browser-integration];
 
       services = {
@@ -174,6 +177,11 @@ in {
       };
     };
 
+    users.users.yuma.openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsbfq4tmdaxVCKZjOMdhDIN1hCTa8+3eMFqBjBMKhB3 yuma@kappa"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHqClYCBF8xmXWpaQfUJQ9OIAbK+FyFgDzgTW+KowZWz yuma@lambda"
+    ];
+
     services = {
       accounts-daemon.enable = true;
       atd.enable = true;
@@ -193,10 +201,10 @@ in {
         settings.PasswordAuthentication = false;
       };
 
-      # kmscon = {
-      #   enable = true;
-      #   hwRender = true;
-      # };
+      kmscon = {
+        enable = true;
+        hwRender = true;
+      };
 
       xserver = {
         enable = true;
@@ -207,7 +215,7 @@ in {
         autoRepeatDelay = 150;
 
         displayManager = {
-          defaultSession = "plasma";
+          # defaultSession = "plasma";
           # defaultSession = "plasmawayland";
           sddm = {
             enable = true;
@@ -221,51 +229,37 @@ in {
           # plasma6.runUsingSystemd = true;
         };
 
-        layout = "jp";
-        xkbModel = "jp106";
-        xkbOptions = __concatStringsSep "," [
-          "shift:both_capslock_cancel"
-          "terminate+ctrl_alt_bksp"
-          "japan:hztg_escape"
-          "ctrl:nocaps"
-        ];
+        xkb = {
+          layout = "jp";
+          model = "jp106";
+          options = __concatStringsSep "," [
+            "shift:both_capslock_cancel"
+            "terminate+ctrl_alt_bksp"
+            "japan:hztg_escape"
+            "ctrl:nocaps"
+          ];
+        };
       };
     };
 
-    # programs.hyprland = {
-    #   enable = true;
-    #   xwayland.hidpi = true;
-    #   xwayland.enable = true;
-    # };
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
     # # Hint Electon apps to use wayland
-    # environment.sessionVariables = {
-    #   NIXOS_OZONE_WL = "1";
-    # };
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
 
     # services.dbus.enable = true;
-    # xdg.portal = {
-    #   enable = true;
-    #   wlr.enable = true;
-    #   extraPortals = [
-    #     pkgs.xdg-desktop-portal-gtk
-    #   ];
-    # };
-
-    # environment.systemPackages = with pkgs; [
-    #   xwayland
-    #   xdg-desktop-portal-gtk
-    #   xdg-desktop-portal-hyprland
-    #   dust
-    #   wofi
-    #   networkmanagerapplet
-    #   meson
-    #   wayland-protocol
-    #   wayland-utils
-    #   wl-clipboard
-    #   wlroots
-    #   swww
-    # ];
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
 
     environment.plasma6.excludePackages = with pkgs.libsForQt5; [
       konsole
@@ -274,6 +268,20 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
+      xwayland
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      dust
+      wofi
+      grimblast
+      networkmanagerapplet
+      meson
+      # wayland-protocol
+      wayland-utils
+      wl-clipboard
+      # wlroots
+      swww
+
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning

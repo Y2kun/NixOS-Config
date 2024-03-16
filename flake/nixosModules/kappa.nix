@@ -413,8 +413,10 @@ in {
         extraPackages32 = [pkgs.pkgsi686Linux.libva];
       };
 
-      nvidia.modesetting.enable = true;
-
+      nvidia = {
+        modesetting.enable = true;
+        nvidiaSettings = true;
+      };
       steam-hardware.enable = true;
 
       bluetooth = {
