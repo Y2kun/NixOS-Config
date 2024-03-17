@@ -93,6 +93,20 @@ in {
           userEmail = "me@y2kun.dev";
         };
 
+        wofi = {
+          enable = true;
+          settings = {
+            location = "center";
+            term = "wezterm";
+            mode = "drun";
+            allow_images = true;
+            allow_markup = true;
+            insensitive = true;
+            # gtk_dark = true;
+            # color = "/wofi_color"
+          };
+        };
+
         # lf = {
         #   enable = true;
 
@@ -114,6 +128,7 @@ in {
             "ls" = "eza";
             "neofetch" = "fastfetch";
             "ff" = "fastfetch";
+            "clock" = "tty-clock -sc";
           };
 
           interactiveShellInit = ''
@@ -242,6 +257,11 @@ in {
       };
     };
 
+    console = {
+      font = "Fira Code";
+      keyMap = "us";
+    };
+
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -258,6 +278,7 @@ in {
       wlr.enable = true;
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-hyprland
       ];
     };
 
@@ -268,20 +289,19 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
-      xwayland
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
       dust
-      wofi
+      dunst
       grimblast
       networkmanagerapplet
       meson
+      dolphin
       # wayland-protocol
       wayland-utils
       wl-clipboard
       # wlroots
       swww
 
+      tty-clock # a clock in the terminal
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning

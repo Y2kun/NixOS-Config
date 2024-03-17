@@ -28,11 +28,6 @@ in {
 
     system.stateVersion = "20.09";
 
-    console = {
-      font = "lat9w-16";
-      keyMap = "us";
-    };
-
     boot = {
       initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
       kernel.sysctl."kernel.sysrq" = 16;

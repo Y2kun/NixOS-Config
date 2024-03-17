@@ -13,9 +13,12 @@
       settings = {
         "$mod" = "SUPER";
         bind = [
-          "$mod, Enter, exec, wezterm"
-          "$mod, Space, exec, wofi -show drun -show-icons"
+          "$mod, RETURN, exec, wezterm"
+          "$mod, Q, killactive"
+          "$mod, SPACE, exec, wofi"
           "$mod, P, exec, grimblast copy area"
+        ];
+        bindm = [
           "$mod, mouse:272, movewindow"
         ];
         decoration = {
