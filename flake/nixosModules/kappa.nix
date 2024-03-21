@@ -412,7 +412,6 @@ in {
         modesetting.enable = true;
         nvidiaSettings = true;
       };
-      steam-hardware.enable = true;
 
       bluetooth = {
         enable = true;

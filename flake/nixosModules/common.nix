@@ -67,6 +67,10 @@ in {
       description = "Yuma Fellinger";
       extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video" "pulsaudio"];
       hashedPassword = "$y$j9T$oNlXtRUJQNJDNQmHXPWxk1$Y0i0NUdvHVgJA3jVKCGSTO3B3ecZyX5n2ss.v.PoZE7";
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsbfq4tmdaxVCKZjOMdhDIN1hCTa8+3eMFqBjBMKhB3 yuma@kappa"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHqClYCBF8xmXWpaQfUJQ9OIAbK+FyFgDzgTW+KowZWz yuma@lambda"
+      ];
       shell = "${pkgs.fish}/bin/fish";
     };
 
@@ -75,11 +79,43 @@ in {
         self.nixosModules.helix
         self.nixosModules.hyprland
       ];
-      home.packages = with pkgs; [plasma-browser-integration];
+      home = {
+        # packages = with pkgs; [plasma-browser-integration];
+        pointerCursor = {
+          gtk.enable = true;
+          # package = pkgs.bibata-cursors;
+          # name = "Bibata-Modern-Classic";
+          package = pkgs.afterglow-cursors-recolored;
+          name = "Afterglow-Cursours-Recolored-Dracula-Cyan";
+          # package = pkgs.phinger-cursors;
+          # name = "Default"; # Doubtfull how this works
+          size = 12;
+        };
+      };
 
       services = {
-        flameshot.enable = true;
-        pasystray.enable = true;
+        # flameshot.enable = true;
+        # pasystray.enable = true;
+        dunst = {
+          enable = true;
+          settings = {
+            global = {
+              width = 300;
+              height = 300;
+              offset = "30x50";
+              origin = "top-center";
+              transparency = 10;
+              frame_color = "#eceff1";
+              font = "Fira Code";
+            };
+
+            urgency_normal = {
+              background = "#37474f";
+              foreground = "#eceff1";
+              timeout = 10;
+            };
+          };
+        };
       };
 
       programs = {
@@ -97,13 +133,124 @@ in {
           enable = true;
           settings = {
             location = "center";
+            layer = "overlay";
             term = "wezterm";
             mode = "drun";
+            sort_order = "alphabetical";
+            widht = "30%";
+            lines = 10;
+            line_wrap = "word";
+            show_all = true;
             allow_images = true;
+            image_size = 20;
+            key_expand = "Tab";
             allow_markup = true;
             insensitive = true;
-            # gtk_dark = true;
-            # color = "/wofi_color"
+            gtk_dark = true;
+          };
+
+          style = ''
+            * {
+              font-family: JetBrainsMono;
+              color: #e5e9f0;
+              background: transparent;
+            }
+
+            #window {
+              background: #111111;
+              margin: auto;
+              padding: 10px;
+              border-radius: 20px;
+              border: 3px solid #00f4cc;
+            }
+
+            #input {
+              padding: 10px;
+              margin-bottom: 10px;
+              border-radius: 15px;
+            }
+
+            #outer-box {
+              padding: 20px;
+            }
+
+            #img {
+              margin-right: 6px;
+            }
+
+            #entry {
+              padding: 10px;
+              border-radius: 15px;
+            }
+
+            #entry:selected {
+              background-color: #00725f;
+            }
+
+            #text {
+              margin: 2px;
+            }
+          '';
+        };
+
+        waybar = {
+          enable = true;
+          systemd.enable = true;
+          settings = {
+            mainBar = {
+              layer = "top";
+              position = "top";
+              # height = ;
+              # width = ;
+              modules-left = [
+                # "hyprland/mode"
+                "hyprland/language"
+              ];
+
+              modules-center = [
+                "hyprland/workspaces"
+              ];
+
+              modules-right = [
+                "tray"
+                "cpu"
+                "memory"
+                "temperature"
+                "network"
+                "battery"
+                "pulsaudio"
+                "clock"
+                # "mpd"
+                # "keyboard-state"
+                # "backlight"
+              ];
+
+              "hyprland/language" = {
+                format-jp = "JP";
+                format-de = "DE";
+              };
+
+              "hyprland/workspaces" = {
+                format = "{icons}";
+                format-icons = {
+                  default = "0";
+                  active = "1";
+                  critical = "8";
+                };
+              };
+
+              # clock = {
+
+              # }
+
+              # margin = "5";
+              "margin-<top|left|bottom|right>" = 5;
+              spacing = 10;
+              mode = "dock";
+              reload_style_on_change = true;
+              # style = {
+              # };
+            };
           };
         };
 
@@ -129,6 +276,7 @@ in {
             "neofetch" = "fastfetch";
             "ff" = "fastfetch";
             "clock" = "tty-clock -sc";
+            "mc" = "musikcube";
           };
 
           interactiveShellInit = ''
@@ -172,7 +320,9 @@ in {
             return {
               font = wezterm.font("Fira Code"),
               font_size = 14.0,
-              color_scheme = "Seti (Gogh)",
+              -- color_scheme = "Seti (Gogh)",
+              -- color_scheme = "Atelier Plateau (base16)",
+              color_scheme = "Argonaut",
               window_background_opacity = .95,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
@@ -191,11 +341,6 @@ in {
         };
       };
     };
-
-    users.users.yuma.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGsbfq4tmdaxVCKZjOMdhDIN1hCTa8+3eMFqBjBMKhB3 yuma@kappa"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHqClYCBF8xmXWpaQfUJQ9OIAbK+FyFgDzgTW+KowZWz yuma@lambda"
-    ];
 
     services = {
       accounts-daemon.enable = true;
@@ -259,17 +404,12 @@ in {
 
     console = {
       font = "Fira Code";
-      keyMap = "us";
+      keyMap = "jp106";
     };
 
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
-    };
-
-    # # Hint Electon apps to use wayland
-    environment.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
     };
 
     # services.dbus.enable = true;
@@ -286,11 +426,13 @@ in {
       konsole
       oxygen
       spectacle
+      kate
+      kwrited
     ];
 
     environment.systemPackages = with pkgs; [
       dust
-      dunst
+      # dunst
       grimblast
       networkmanagerapplet
       meson
@@ -331,7 +473,7 @@ in {
       krita # In some ways better than gimp
       libreoffice # it's libre office
       # lite-xl # editor i used for lobster
-      # lutris # Games launcher
+      lutris # Games launcher
       magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
@@ -373,14 +515,33 @@ in {
       zip # zips something
     ];
 
+    hardware = {
+      steam-hardware.enable = true;
+    };
+
+    # # Hint Electon apps to use wayland
+    # environment.sessionVariables = {
+    # };
+
     environment.variables = {
-      EDITOR = "hx";
+      EDITOR = "helix";
+      BROWSER = "firefox";
+      TERMINAL = "wezterm";
+
+      WLR_NO_HARDWARE_CURSORS = "1";
+      WLR_RENDERER_ALLOW_SOFTWARE = "1";
+
+      NIXOS_OZONE_WL = "1";
+      CLUTTER_BACKEND = "wayland";
+      XDG_SESSION_TYPE = "wayland";
+
       LC_CTYPE = "en_US.UTF-8";
       LESS = "-M";
       MINICOM = "-c on";
       PAGER = "less -rX";
       MANPAGER = "less -rX";
       ASPELL_CONF = "dict-dir ${pkgs.aspell}/lib/aspell";
+
       OMNISHARPHOME = let
         omnisharp-configuration = {
           FormattingOptions = {
