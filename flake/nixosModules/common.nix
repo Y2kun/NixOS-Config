@@ -159,8 +159,8 @@ in {
             #window {
               background: #111111;
               margin: auto;
-              padding: 10px;
-              border-radius: 20px;
+              padding: 10x;
+              border-radius: 5px;
               border: 3px solid #00f4cc;
             }
 
@@ -230,14 +230,14 @@ in {
                 format-de = "DE";
               };
 
-              "hyprland/workspaces" = {
-                format = "{icons}";
-                format-icons = {
-                  default = "0";
-                  active = "1";
-                  critical = "8";
-                };
-              };
+              # "hyprland/workspaces" = {
+              #   format = "{icons}";
+              #   format-icons = {
+              #     default = "0";
+              #     active = "1";
+              #     critical = "8";
+              #   };
+              # };
 
               # clock = {
 
@@ -323,7 +323,7 @@ in {
               -- color_scheme = "Seti (Gogh)",
               -- color_scheme = "Atelier Plateau (base16)",
               color_scheme = "Argonaut",
-              window_background_opacity = .95,
+              window_background_opacity = .9,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
                 {
@@ -479,14 +479,16 @@ in {
       # morgen # calendar
       musikcube # Music player from Command-line
       ncdu # manualy find heavy data
-      nixpkgs-unstable.obsidian # where all my personal notes are
-      nixpkgs-unstable.signal-desktop # a messenging app
+      # nixpkgs-unstable.obsidian # where all my personal notes are
+      obsidian
+      # nixpkgs-unstable.signal-desktop # a messenging app
+      signal-desktop
       obs-studio # screenrecorder
       openrgb # controlls the color of peripheral devices
       openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
-      plasma5Packages.kdeplasma-addons
+      # plasma5Packages.kdeplasma-addons
       plasma5Packages.kmail
       prismlauncher # My minecraft instance manager of choice
       puddletag # song metadata editor
@@ -499,7 +501,7 @@ in {
       starship # give helpful information and looks cool
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
-      tauon # music player
+      # tauon # music player
       tig # display the commit history of a git repo, installed for my father
       tree # lists directory as a tree
       units # converts units

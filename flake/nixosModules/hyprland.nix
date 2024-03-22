@@ -41,12 +41,12 @@
           "$mod, Q, killactive,"
 
           # Functional keybinds
-          # "XF86AudioMicMute,exec,pamixer --default-source -t"
-          # "XF86MonBrightnessDown,exec,light -U 20"
-          # "XF86MonBrightnessUp,exec,light -A 20"
-          # "XF86AudioMute,exec,pamixer -t"
-          # "XF86AudioLowerVolume,exec,pamixer -d 10"
-          # "XF86AudioRaiseVolume,exec,pamixer -i 10"
+          ", XF86AudioMicMute,exec,pamixer --default-source -t"
+          ", XF86MonBrightnessDown,exec,light -U 20"
+          ", XF86MonBrightnessUp,exec,light -A 20"
+          ", XF86AudioMute,exec,pamixer -t"
+          ", XF86AudioLowerVolume,exec,pamixer -d 10"
+          ", XF86AudioRaiseVolume,exec,pamixer -i 10"
 
           "$mod, C, exec, hyprctl switchxkblayout"
 
