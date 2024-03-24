@@ -43,7 +43,9 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      nixpkgs-unstable.r2modman # modloader for some games
+      # nixpkgs-unstable.r2modman # modloader for some games
+      r2modman
+      alacritty
       # nixpkgs-unstable.stt
       # nixpkgs-unstable.tts
     ];
@@ -466,6 +468,12 @@ in {
       home.file.".Xmodmap".text = ''
         keycode 102 = Super_L
       '';
+
+      wayland.windowManager.hyprland.settings.monitor = [
+        "DP-1    ,preferred,-1080x320,1,transform,1"
+        "HDMI-A-2,preferred,0x0,1,transform,2"
+        "HDMI-A-1,preferred,0x1080,1"
+      ];
 
       xdg.enable = true;
 

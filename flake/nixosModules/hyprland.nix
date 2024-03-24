@@ -15,7 +15,10 @@
       # exec-once = "swww init"; # & sleep 0.5 && exec wallpaper_random;
 
       settings = {
-        exec-once = "waybar";
+        exec-once = [
+          "syncthingtray-minimal"
+          "nm-applet"
+        ];
         general = {
           border_size = 3;
           gaps_in = 8;
@@ -25,12 +28,9 @@
           resize_on_border = true;
         };
 
-        monitor = "eDP-1, prefered, auto, 1";
-        # monitor = ", prefered, auto, 1";
-
         input = {
           kb_layout = "jp, de";
-          kb_options = ctrl:nocaps;
+          kb_options = "ctrl:nocaps";
         };
 
         "$mod" = "SUPER";

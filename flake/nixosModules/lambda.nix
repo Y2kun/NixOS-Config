@@ -61,6 +61,9 @@
       home.username = "yuma";
       home.homeDirectory = "/home/yuma";
       home.stateVersion = "23.05";
+      wayland.windowManager.hyprland.settings.monitor = [
+        "eDP-1, prefered, auto, 1"
+      ];
     };
 
     # Enable TLP (better than gnomes internal power manager)

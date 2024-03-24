@@ -78,7 +78,9 @@ in {
       imports = [
         self.nixosModules.helix
         self.nixosModules.hyprland
+        self.nixosModules.hyprlock
       ];
+
       home = {
         # packages = with pkgs; [plasma-browser-integration];
         pointerCursor = {
@@ -100,19 +102,32 @@ in {
           enable = true;
           settings = {
             global = {
+              follow = "mouse";
               width = 300;
               height = 300;
-              offset = "30x50";
+              notification_limit = 10;
+              offset = "0x5";
+              progress_bar = true;
+              progress_bar_height = 10;
+              progress_bar_frame_width = 1;
               origin = "top-center";
               transparency = 10;
-              frame_color = "#eceff1";
-              font = "Fira Code";
+              corner_radius = 5;
+              frame_width = 3;
+              font = "Fira";
             };
 
             urgency_normal = {
-              background = "#37474f";
-              foreground = "#eceff1";
-              timeout = 10;
+              foreground = "#ffffff";
+              background = "#003020";
+              frame_color = "#00f4cc";
+              timeout = 5;
+            };
+            urgency_critical = {
+              foreground = "#ffffff";
+              background = "#aa3020";
+              frame_color = "#ff040c";
+              timeout = 5;
             };
           };
         };
@@ -254,6 +269,8 @@ in {
           };
         };
 
+        hyprlock.enable = true;
+
         # lf = {
         #   enable = true;
 
@@ -323,6 +340,7 @@ in {
               -- color_scheme = "Seti (Gogh)",
               -- color_scheme = "Atelier Plateau (base16)",
               color_scheme = "Argonaut",
+              enable_wayland = true,
               window_background_opacity = .9,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
@@ -431,12 +449,13 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
+      nil
       dust
       # dunst
       grimblast
       networkmanagerapplet
       meson
-      dolphin
+      # dolphin
       # wayland-protocol
       wayland-utils
       wl-clipboard
@@ -468,7 +487,7 @@ in {
       godot_4 # a gameengine
       # htop # performance
       inkscape # vectorgraphic editor
-      itch # many free games
+      # itch # many free games
       jq # Json formater
       krita # In some ways better than gimp
       libreoffice # it's libre office
@@ -521,10 +540,6 @@ in {
       steam-hardware.enable = true;
     };
 
-    # # Hint Electon apps to use wayland
-    # environment.sessionVariables = {
-    # };
-
     environment.variables = {
       EDITOR = "helix";
       BROWSER = "firefox";
@@ -533,6 +548,7 @@ in {
       WLR_NO_HARDWARE_CURSORS = "1";
       WLR_RENDERER_ALLOW_SOFTWARE = "1";
 
+      # Hint Electon apps to use wayland
       NIXOS_OZONE_WL = "1";
       CLUTTER_BACKEND = "wayland";
       XDG_SESSION_TYPE = "wayland";
