@@ -15,10 +15,6 @@
       # exec-once = "swww init"; # & sleep 0.5 && exec wallpaper_random;
 
       settings = {
-        exec-once = [
-          "syncthingtray-minimal"
-          "nm-applet"
-        ];
         general = {
           border_size = 3;
           gaps_in = 8;
