@@ -36,6 +36,7 @@ in {
     };
 
     fonts.packages = with pkgs; [
+      font-awesome
       corefonts
       dejavu_fonts
       ipafont
@@ -228,17 +229,114 @@ in {
 
               modules-right = [
                 "tray"
+                "disk"
                 "cpu"
                 "memory"
                 "temperature"
                 "network"
                 "battery"
-                "pulsaudio"
+                # "pulsaudio"
                 "clock"
                 # "mpd"
                 # "keyboard-state"
                 # "backlight"
               ];
+
+              disk = {
+                format = " {}%";
+                tooltip-format = "{used} / {total} used";
+              };
+
+              cpu = {
+                format = " {usage}%";
+              };
+
+              memory = {
+                format = " {}%";
+                tooltip-format = "{used:0.1f}G / {total:0.1f}G used";
+              };
+
+              "network#disconnected" = {
+                tooltip-format = "No connection!";
+                format-ethernet = "";
+                format-wifi = "";
+                format-linked = "";
+                format-disconnected = "";
+                on-click = "nm-connection-editor";
+              };
+
+              "network#ethernet" = {
+                interface = "enp*";
+                format-ethernet = "";
+                format-wifi = "";
+                format-linked = "";
+                format-disconnected = "";
+                tooltip-format = "{ifname}: {ipaddr}/{cidr}";
+                on-click = "nm-connection-editor";
+              };
+
+              "network#wifi" = {
+                interface = "wlp*";
+                format-ethernet = "";
+                format-wifi = " {essid} ({signalStrength}%)";
+                format-linked = "";
+                format-disconnected = "";
+                tooltip-format = "{ifname}: {ipaddr}/{cidr}";
+                on-click = "nm-connection-editor";
+              };
+
+              "network#vpn" = {
+                interface = "tun0";
+                format = "";
+                format-disconnected = "";
+                tooltip-format = "{ifname}: {ipaddr}/{cidr}";
+                on-click = "nm-connection-editor";
+              };
+
+              # network = {
+              #   format = "{icon}";
+              #   format-alt = "{ipaddr}/{cidr} {icon}";
+              #   format-alt-click = "click-right";
+              #   format-icons = {
+              #     wifi = ["" "" ""];
+              #     ethernet = [""];
+              #     disconnected = [""];
+              #   };
+              #   # on-click = "termite -e nmtui";
+              #   # tooltip = false;
+              # };
+
+              battery = {
+                format = "{capacity}% {icon}";
+                format-alt = "{time} {icon}";
+                format-icons = ["" "" "" "" ""];
+                format-charging = "{capacity}% ";
+                interval = 30;
+                states = {
+                  warning = 20;
+                  critical = 10;
+                };
+                # tooltip= false;
+              };
+
+              # pulseaudio = {
+              #   format = "{icon}";
+              #   format-alt = "{volume} {icon}";
+              #   format-alt-click = "click-right";
+              #   format-muted = "";
+              #   format-icons = {
+              #     phone = [" " " " " " " "];
+              #     default = ["" "" "" ""];
+              #   };
+              #   scroll-step = 10;
+              #   on-click = "pavucontrol";
+              #   # tooltip = false;
+              # };
+
+              clock = {
+                format = "{:%a %d %b %H:%M}";
+                # tooltip-format = "{}";
+              };
 
               "hyprland/language" = {
                 format-jp = "JP";
@@ -253,10 +351,6 @@ in {
               #     critical = "8";
               #   };
               # };
-
-              # clock = {
-
-              # }
 
               # margin = "5";
               "margin-<top|left|bottom|right>" = 5;
@@ -341,7 +435,7 @@ in {
               -- color_scheme = "Atelier Plateau (base16)",
               color_scheme = "Argonaut",
               enable_wayland = true,
-              window_background_opacity = .9,
+              window_background_opacity = 0.9,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
                 {
@@ -384,6 +478,12 @@ in {
         hwRender = true;
       };
 
+      desktopManager = {
+        plasma6.enable = true;
+        # plasma5.enable = true;
+        # plasma6.runUsingSystemd = true;
+      };
+
       xserver = {
         enable = true;
         autorun = true;
@@ -399,12 +499,6 @@ in {
             enable = true;
             wayland.enable = true;
           };
-        };
-
-        desktopManager = {
-          plasma6.enable = true;
-          # plasma5.enable = true;
-          # plasma6.runUsingSystemd = true;
         };
 
         xkb = {
@@ -423,11 +517,6 @@ in {
     console = {
       font = "Fira Code";
       keyMap = "jp106";
-    };
-
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
     };
 
     # services.dbus.enable = true;
@@ -632,6 +721,11 @@ in {
       nix-index = {
         enable = true;
         enableFishIntegration = true;
+      };
+
+      hyprland = {
+        enable = true;
+        xwayland.enable = true;
       };
 
       command-not-found.enable = false;

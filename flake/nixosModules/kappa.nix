@@ -45,7 +45,6 @@ in {
     environment.systemPackages = with pkgs; [
       # nixpkgs-unstable.r2modman # modloader for some games
       r2modman
-      alacritty
       # nixpkgs-unstable.stt
       # nixpkgs-unstable.tts
     ];
@@ -452,12 +451,12 @@ in {
       };
     };
 
-    # programs = {
-    #   adb.enable = true;
-    #   dconf.enable = true;
-    #   mosh.enable = true;
-    #   gnupg.agent.pinentryFlavor = "qt";
-    # };
+    programs = {
+      # adb.enable = true;
+      # dconf.enable = true;
+      # mosh.enable = true;
+      # gnupg.agent.pinentryFlavor = "qt";
+    };
 
     # FIXME: Ugly hack to make home-manager obey??
     systemd.services.home-manager-yuma.environment.HOME = "/home/yuma";
@@ -504,6 +503,45 @@ in {
       programs = {
         gpg.settings = {keyserver-options = "auto-key-retrieve";};
         # feh.enable = true;
+
+        alacritty = {
+          enable = true;
+          settings = {
+            # general = {
+            #   shell.program = "fish";
+            # };
+
+            window = {
+              opacity = 0.9;
+            };
+
+            scrolling = {
+              history = 100000;
+              multiplier = 5;
+            };
+
+            font = {
+              normal = {
+                family = "Fira Code";
+                style = "Regular";
+              };
+
+              size = 14;
+            };
+
+            colors = {
+              primary = {
+                foreground = "#dddddd";
+                background = "#0f0f0f";
+              };
+
+              cursor = {
+                text = "#00ffaa";
+                cursor = "#00aa11";
+              };
+            };
+          };
+        };
       };
     };
   };

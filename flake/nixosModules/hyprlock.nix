@@ -24,12 +24,12 @@
         $font_material_symbols = Fira Code Symbols
 
         general {
-          grace = 10
+          grace = 15
         }
 
         background {
             color = rgba(13131377)
-            # path = {{ SWWW_WALL }}
+            # path = {{SWWW_WALL}}
             path = screenshot
             blur_size = 5
             blur_passes = 4
@@ -66,33 +66,33 @@
         }
         label { # Greeting
             monitor =
-            text = hi $USER !!!
+            text = Greatings $USER
             shadow_passes = 1
             shadow_boost = 0.5
             color = $text_color
-            font_size = 20
+            font_size = 24
             font_family = $font_family
 
             position = 0, 240
             halign = center
             valign = center
         }
-        label { # lock icon
-            monitor =
-            text = lock
-            shadow_passes = 1
-            shadow_boost = 0.5
-            color = $text_color
-            font_size = 21
-            font_family = $font_material_symbols
+        # label { # lock icon
+        #     monitor =
+        #     text = lock
+        #     shadow_passes = 1
+        #     shadow_boost = 0.5
+        #     color = $text_color
+        #     font_size = 21
+        #     font_family = $font_material_symbols
 
-            position = 0, 65
-            halign = center
-            valign = bottom
-        }
+        #     position = 0, 65
+        #     halign = center
+        #     valign = bottom
+        # }
         label { # "locked" text
             monitor =
-            text = locked
+            text = This Device is currently locked
             shadow_passes = 1
             shadow_boost = 0.5
             color = $text_color
