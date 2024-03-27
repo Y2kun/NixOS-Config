@@ -256,6 +256,12 @@ in {
                 tooltip-format = "{used:0.1f}G / {total:0.1f}G used";
               };
 
+              temperature = {
+                critical-threshold = 80;
+                format = "{icon} {temperatureC}°C";
+                format-icons = ["" "" "" "" ""];
+              };
+
               "network#disconnected" = {
                 tooltip-format = "No connection!";
                 format-ethernet = "";
