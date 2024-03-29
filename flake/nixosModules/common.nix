@@ -212,12 +212,71 @@ in {
         waybar = {
           enable = true;
           systemd.enable = true;
+          style = ''
+            * {
+              background: transparent;
+              font-family: Fira;
+              font-size: 14px;
+              padding: 1px;
+            }
+
+            window#waybar {
+              background: rgba(0, 0, 0, 0.55);
+            }
+
+            #language ,#tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
+              background: transparent;
+              color: white;
+              background: rgba(0, 0, 0, 0.5);
+              border-radius: 25%;
+              border: 1px solid rgba(0, 170, 170, 0.3);
+            }
+
+            #workspaces button {
+              color: #fff;
+              background: rgba(0, 0, 0, 0.5);
+              border-radius: 45%;
+              border: 2px solid rgba(255, 255, 255, 0.3);
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+
+            #workspaces button.active {
+              background: rgba(0, 170, 170, 0.7);
+            }
+
+            #workspaces button:hover {
+              background: rgba(0, 200, 200, 0.8);
+            }
+
+            #workspaces button:first-child {
+              margin-left: 0em;
+              margin-right: 1em;
+            }
+
+            #workspaces button:last-child {
+              margin-left: 1em;
+              margin-right: 1em;
+            }
+
+            #workspaces button:last-child {
+              margin-left: 1em;
+              margin-right: 0em;
+            }
+          '';
           settings = {
             mainBar = {
               layer = "top";
               position = "top";
               # height = ;
               # width = ;
+              # margin = "5";
+              margin-top = 0;
+              # "margin-<top|left|bottom|right>" = 5;
+              spacing = 10;
+              mode = "dock";
+              reload_style_on_change = true;
+
               modules-left = [
                 # "hyprland/mode"
                 "hyprland/language"
@@ -229,18 +288,32 @@ in {
 
               modules-right = [
                 "tray"
+                "wireplumber"
                 "disk"
                 "cpu"
                 "memory"
                 "temperature"
                 "network"
                 "battery"
-                # "pulsaudio"
                 "clock"
-                # "mpd"
                 # "keyboard-state"
                 # "backlight"
               ];
+
+              tray = {
+                show-passive-items = true;
+              };
+
+              wireplumber = {
+                format = "{icon} {volume:2}%";
+                format-bluetooth = "{icon} {volume}%";
+                format-muted = "MUTE";
+                format-icons = {
+                  headphones = "";
+                  default = ["" ""];
+                };
+                on-click-left = "pavucontrol";
+              };
 
               disk = {
                 format = " {}%";
@@ -299,21 +372,8 @@ in {
                 on-click = "nm-connection-editor";
               };
 
-              # network = {
-              #   format = "{icon}";
-              #   format-alt = "{ipaddr}/{cidr} {icon}";
-              #   format-alt-click = "click-right";
-              #   format-icons = {
-              #     wifi = ["" "" ""];
-              #     ethernet = [""];
-              #     disconnected = [""];
-              #   };
-              #   # on-click = "termite -e nmtui";
-              #   # tooltip = false;
-              # };
-
               battery = {
-                format = "{capacity}% {icon}";
+                format = "{icon} {capacity}%";
                 format-alt = "{time} {icon}";
                 format-icons = ["" "" "" "" ""];
                 format-charging = "{capacity}% ";
@@ -322,22 +382,7 @@ in {
                   warning = 20;
                   critical = 10;
                 };
-                # tooltip= false;
               };
-
-              # pulseaudio = {
-              #   format = "{icon}";
-              #   format-alt = "{volume} {icon}";
-              #   format-alt-click = "click-right";
-              #   format-muted = "";
-              #   format-icons = {
-              #     phone = [" " " " " " " "];
-              #     default = ["" "" "" ""];
-              #   };
-              #   scroll-step = 10;
-              #   on-click = "pavucontrol";
-              #   # tooltip = false;
-              # };
 
               clock = {
                 format = "{:%a %d %b %H:%M}";
@@ -356,14 +401,6 @@ in {
               #     active = "1";
               #     critical = "8";
               #   };
-              # };
-
-              # margin = "5";
-              "margin-<top|left|bottom|right>" = 5;
-              spacing = 10;
-              mode = "dock";
-              reload_style_on_change = true;
-              # style = {
               # };
             };
           };
