@@ -248,21 +248,6 @@ in {
             #workspaces button:hover {
               background: rgba(0, 200, 200, 0.8);
             }
-
-            #workspaces button:first-child {
-              margin-left: 0em;
-              margin-right: 1em;
-            }
-
-            #workspaces button:last-child {
-              margin-left: 1em;
-              margin-right: 1em;
-            }
-
-            #workspaces button:last-child {
-              margin-left: 1em;
-              margin-right: 0em;
-            }
           '';
           settings = {
             mainBar = {
@@ -310,7 +295,12 @@ in {
                 format-muted = "MUTE";
                 format-icons = {
                   headphones = "";
-                  default = ["" ""];
+                  handsfree = "";
+                  headset = "";
+                  phone = "";
+                  portable = "";
+                  car = "";
+                  default = ["🔈" "🔉" "🔊"];
                 };
                 on-click-left = "pavucontrol";
               };
@@ -495,6 +485,14 @@ in {
           '';
         };
       };
+
+      # gtk = {
+      #   enable = true;
+      #   theme = {
+      #     name = "Breeze-Dark";
+      #     package = pkgs.libsForQt5.breeze-gtk;
+      #   };
+      # };
     };
 
     services = {
