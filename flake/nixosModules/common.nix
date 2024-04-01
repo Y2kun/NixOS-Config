@@ -514,6 +514,8 @@ in {
         settings.PasswordAuthentication = false;
       };
 
+      hardware.openrgb.enable = true;
+
       kmscon = {
         enable = true;
         hwRender = true;
@@ -633,7 +635,6 @@ in {
       # nixpkgs-unstable.signal-desktop # a messenging app
       signal-desktop
       obs-studio # screenrecorder
-      openrgb # controlls the color of peripheral devices
       openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
