@@ -224,7 +224,7 @@ in {
               background: rgba(0, 0, 0, 0.55);
             }
 
-            #language ,#tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
+            #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
               background: transparent;
               color: white;
               background: rgba(0, 0, 0, 0.5);
@@ -593,6 +593,7 @@ in {
       wl-clipboard
       # wlroots
       swww
+      glow
 
       tty-clock # a clock in the terminal
       alejandra # formats nix files
