@@ -773,6 +773,7 @@ in {
 
       command-not-found.enable = false;
       dconf.enable = true;
+      nm-applet.enable = true;
     };
 
     swapDevices = [];
