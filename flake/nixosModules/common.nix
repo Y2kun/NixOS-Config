@@ -365,13 +365,24 @@ in {
               battery = {
                 format = "{icon} {capacity}%";
                 format-alt = "{time} {icon}";
+                tooltip-format = "{power}";
                 format-icons = ["" "" "" "" ""];
-                format-charging = "{capacity}% ";
-                interval = 30;
+                # format-charging = " {capacity}%";
+                format-plugged = " { capacity}%";
+                interval = 5;
                 states = {
                   warning = 20;
                   critical = 10;
                 };
+
+                # format-discharging = "{capacity}% {icon}";
+                # format-charging = "{capacity}% {icon}";
+                # format-plugged = "{icon} {capacity}%";
+                # format-icons = {
+                #   default = ["" "" "" "" "" "" "" "" "" ""];
+                #   charging = ["" "" "" "" "" "" "" ""];
+                #   plugged = "ﮣ";
+                # };
               };
 
               clock = {
