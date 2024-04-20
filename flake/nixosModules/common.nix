@@ -136,8 +136,8 @@ in {
 
       programs = {
         home-manager.enable = true;
-        gh.enable = true;
         btop.enable = true;
+        gh.enable = true;
 
         git = {
           enable = true;
@@ -605,6 +605,8 @@ in {
       # wlroots
       swww
       glow
+      figlet
+      brightnessctl
 
       tty-clock # a clock in the terminal
       alejandra # formats nix files

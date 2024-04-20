@@ -35,14 +35,15 @@
           "$mod, SPACE, exec, wofi"
           "$mod, P, exec, grimblast copy area"
           "$mod, Q, killactive,"
+          "$mod, L, exec, hyprlock"
 
           # Functional keybinds
-          ", XF86AudioMicMute,exec,pamixer --default-source -t"
-          ", XF86MonBrightnessDown,exec,light -U 20"
-          ", XF86MonBrightnessUp,exec,light -A 20"
-          ", XF86AudioMute,exec,pamixer -t"
-          ", XF86AudioLowerVolume,exec,pamixer -d 10"
-          ", XF86AudioRaiseVolume,exec,pamixer -i 10"
+          ", XF86MonBrightnessUp, exec, brightnessctl -q s +10%"
+          ", XF86MonBrightnessDown, exec, brightnessctl -q s 10%-"
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioMicMute, exec, wpctl set-source-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
           "$mod, C, exec, hyprctl switchxkblayout"
 

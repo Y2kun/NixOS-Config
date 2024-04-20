@@ -29,8 +29,8 @@
 
         background {
             color = rgba(13131377)
-            # path = {{SWWW_WALL}}
-            path = screenshot
+            path = {{./home/yuma/wallpaper/nix.jpg}}
+            # path = screenshot
             blur_size = 5
             blur_passes = 4
         }
