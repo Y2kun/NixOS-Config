@@ -409,17 +409,17 @@ in {
 
         hyprlock.enable = true;
 
-        # lf = {
-        #   enable = true;
+        lf = {
+          enable = true;
 
-        #   setting = {
-        #     preview = true;
-        #     hidden = true;
-        #     drawbox = true;
-        #     # icons = true;
-        #     ignorecase = true;
-        #   };
-        # };
+          settings = {
+            preview = true;
+            hidden = true;
+            drawbox = true;
+            icons = true;
+            ignorecase = true;
+          };
+        };
 
         zoxide.enable = true;
         fish = {
