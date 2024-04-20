@@ -538,6 +538,15 @@ in {
         # plasma6.runUsingSystemd = true;
       };
 
+      displayManager = {
+        # defaultSession = "plasma";
+        # defaultSession = "plasmawayland";
+        sddm = {
+          enable = true;
+          wayland.enable = true;
+        };
+      };
+
       xserver = {
         enable = true;
         autorun = true;
@@ -545,15 +554,6 @@ in {
         enableCtrlAltBackspace = true;
         autoRepeatInterval = 30;
         autoRepeatDelay = 150;
-
-        displayManager = {
-          # defaultSession = "plasma";
-          # defaultSession = "plasmawayland";
-          sddm = {
-            enable = true;
-            wayland.enable = true;
-          };
-        };
 
         xkb = {
           layout = "jp";
