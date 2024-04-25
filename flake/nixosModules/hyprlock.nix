@@ -24,7 +24,7 @@
         $font_material_symbols = Fira Code Symbols
 
         general {
-          grace = 5
+          grace = 1
         }
 
         background {

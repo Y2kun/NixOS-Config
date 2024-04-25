@@ -41,15 +41,16 @@
 
     environment.systemPackages = with pkgs; [
       armcord
+      webcord-vencord
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
       })
       # discordo
-      docker
-      docker-client
-      docker-compose
-      logisim-evolution
-      osu-lazer-bin
+      # docker
+      # docker-client
+      # docker-compose
+      # logisim-evolution
+      # osu-lazer-bin
       protonvpn-gui
       qemu
       teams-for-linux

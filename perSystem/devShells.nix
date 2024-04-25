@@ -14,7 +14,7 @@ flake: {
         packages = with pkgs; [
           deadnix
           inputs'.colmena.packages.colmena
-          just
+          # just
           statix
           config.treefmt.build.wrapper
         ];

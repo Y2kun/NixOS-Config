@@ -145,6 +145,45 @@ in {
           userEmail = "me@y2kun.dev";
         };
 
+        alacritty = {
+          enable = true;
+          settings = {
+            # general = {
+            #   shell.program = "fish";
+            # };
+
+            window = {
+              opacity = 0.9;
+            };
+
+            scrolling = {
+              history = 100000;
+              multiplier = 5;
+            };
+
+            font = {
+              normal = {
+                family = "Fira Code";
+                style = "Regular";
+              };
+
+              size = 14;
+            };
+
+            colors = {
+              primary = {
+                foreground = "#dddddd";
+                background = "#0f0f0f";
+              };
+
+              cursor = {
+                text = "#00ffaa";
+                cursor = "#00aa11";
+              };
+            };
+          };
+        };
+
         wofi = {
           enable = true;
           settings = {
@@ -552,18 +591,24 @@ in {
         autorun = true;
         exportConfiguration = true;
         enableCtrlAltBackspace = true;
-        autoRepeatInterval = 30;
+        autoRepeatInterval = 20;
         autoRepeatDelay = 150;
 
         xkb = {
-          layout = "jp";
+          layout = "jp, de";
           model = "jp106";
-          options = __concatStringsSep "," [
-            "shift:both_capslock_cancel"
-            "terminate+ctrl_alt_bksp"
-            "japan:hztg_escape"
-            "ctrl:nocaps"
-          ];
+          options = "ctrl:nocap, sgrp:alt_shift_toggle";
+          # "shift:both_capslock_cancel"
+          # "terminate+ctrl_alt_bksp"
+          # "japan:hztg_escape, ctrl:nocaps, grp:alt_shift_toggle"
+
+          # options = __concatStringsSep "," [
+          #   # "shift:both_capslock_cancel"
+          #   # "terminate+ctrl_alt_bksp"
+          #   "japan:hztg_escape"
+          #   "ctrl:nocaps"
+          #   "grp:alt_shift_toggle"
+          # ];
         };
       };
     };
@@ -607,6 +652,7 @@ in {
       glow
       figlet
       brightnessctl
+      xfce.thunar
 
       tty-clock # a clock in the terminal
       alejandra # formats nix files

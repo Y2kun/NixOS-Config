@@ -26,12 +26,12 @@
 
         input = {
           kb_layout = "jp, de";
-          kb_options = "ctrl:nocaps";
+          kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
         };
 
         "$mod" = "SUPER";
         bind = [
-          "$mod, RETURN, exec, wezterm"
+          "$mod, RETURN, exec, alacritty"
           "$mod, SPACE, exec, wofi"
           "$mod, P, exec, grimblast copy area"
           "$mod, Q, killactive,"
@@ -45,7 +45,7 @@
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86AudioMicMute, exec, wpctl set-source-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
-          "$mod, C, exec, hyprctl switchxkblayout"
+          # "$mod, C, exec, hyprctl switchxkblayout"
 
           # "$mod, mouse_down, workspace, e-1"
           "$mod, V, togglefloating,"
