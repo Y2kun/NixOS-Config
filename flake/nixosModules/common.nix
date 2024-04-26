@@ -341,7 +341,7 @@ in {
                   car = "";
                   default = ["🔈" "🔉" "🔊"];
                 };
-                on-click-left = "pavucontrol";
+                on-click-left = "exec pavucontrol";
               };
 
               disk = {
@@ -471,6 +471,7 @@ in {
             "ff" = "fastfetch";
             "clock" = "tty-clock -sc";
             "mc" = "musikcube";
+            "tm" = "tmatrix -s 17";
           };
 
           interactiveShellInit = ''
@@ -622,9 +623,9 @@ in {
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-hyprland
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ];
     };
 
@@ -637,6 +638,7 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
+      tmatrix
       nil
       dust
       # dunst

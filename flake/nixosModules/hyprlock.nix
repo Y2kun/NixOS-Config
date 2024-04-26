@@ -66,7 +66,7 @@
         }
         label { # Greeting
             monitor =
-            text = Greatings $USER
+            text = Greetings $USER
             shadow_passes = 1
             shadow_boost = 0.5
             color = $text_color

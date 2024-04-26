@@ -48,6 +48,7 @@
           # "$mod, C, exec, hyprctl switchxkblayout"
 
           # "$mod, mouse_down, workspace, e-1"
+          "$mod, F, fullscreen"
           "$mod, V, togglefloating,"
 
           # Switch workspaces with super + [0-9]
