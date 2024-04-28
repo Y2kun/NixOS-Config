@@ -154,9 +154,9 @@ in {
         alacritty = {
           enable = true;
 
-          general = {
-            shell.program = "fish";
-          };
+          # general = {
+          #   shell.program = "fish";
+          # };
 
           settings = {
             window = {
