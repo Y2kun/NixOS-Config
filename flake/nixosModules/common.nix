@@ -100,7 +100,6 @@ in {
 
       services = {
         # flameshot.enable = true;
-        # pasystray.enable = true;
         dunst = {
           enable = true;
           settings = {
@@ -149,11 +148,12 @@ in {
 
         alacritty = {
           enable = true;
-          settings = {
-            # general = {
-            #   shell.program = "fish";
-            # };
 
+          general = {
+            shell.program = "fish";
+          };
+
+          settings = {
             window = {
               opacity = 0.9;
             };
@@ -451,7 +451,7 @@ in {
         hyprlock.enable = true;
 
         lf = {
-          enable = true;
+          # enable = true;
 
           settings = {
             preview = true;
@@ -467,13 +467,13 @@ in {
           enable = true;
           shellAliases = {
             # "ls" = "ls -ach";
-            "eza" = "eza -a --icons";
             "ls" = "eza";
-            "neofetch" = "fastfetch";
+            "eza" = "eza -a --icons";
+            # "neofetch" = "fastfetch";
             "ff" = "fastfetch";
-            "clock" = "tty-clock -sc";
             "mc" = "musikcube";
             "tm" = "tmatrix -s 17";
+            "clock" = "tty-clock -sc";
           };
 
           interactiveShellInit = ''
@@ -553,11 +553,11 @@ in {
       atd.enable = true;
       colord.enable = true;
       devmon.enable = true;
-      flatpak.enable = true;
       fstrim.enable = true;
       fwupd.enable = true;
       gnome.at-spi2-core.enable = true;
       gnome.gnome-keyring.enable = true;
+      # flatpak.enable = true;
       # printing.enable = true;
       radicale.enable = false;
       udisks2.enable = true;
@@ -597,22 +597,22 @@ in {
         autoRepeatInterval = 20;
         autoRepeatDelay = 150;
 
-        xkb = {
-          layout = "jp, de";
-          model = "jp106";
-          options = "ctrl:nocap, sgrp:alt_shift_toggle";
-          # "shift:both_capslock_cancel"
-          # "terminate+ctrl_alt_bksp"
-          # "japan:hztg_escape, ctrl:nocaps, grp:alt_shift_toggle"
+        # xkb = {
+        #   layout = "jp, de";
+        #   model = "jp106";
+        #   options = "ctrl:nocap, sgrp:alt_shift_toggle";
+        # "shift:both_capslock_cancel"
+        # "terminate+ctrl_alt_bksp"
+        # "japan:hztg_escape, ctrl:nocaps, grp:alt_shift_toggle"
 
-          # options = __concatStringsSep "," [
-          #   # "shift:both_capslock_cancel"
-          #   # "terminate+ctrl_alt_bksp"
-          #   "japan:hztg_escape"
-          #   "ctrl:nocaps"
-          #   "grp:alt_shift_toggle"
-          # ];
-        };
+        # options = __concatStringsSep "," [
+        #   # "shift:both_capslock_cancel"
+        #   # "terminate+ctrl_alt_bksp"
+        #   "japan:hztg_escape"
+        #   "ctrl:nocaps"
+        #   "grp:alt_shift_toggle"
+        # ];
+        # };
       };
     };
 
@@ -640,25 +640,9 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
-      tmatrix
-      nil
-      dust
-      # dunst
-      grimblast
-      networkmanagerapplet
-      meson
-      # dolphin
+      # meson
       # wayland-protocol
-      wayland-utils
-      wl-clipboard
       # wlroots
-      swww
-      glow
-      figlet
-      brightnessctl
-      xfce.thunar
-
-      tty-clock # a clock in the terminal
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning
@@ -666,21 +650,24 @@ in {
       audacity # for editing audio
       bat # returns file content like cat, looks better
       blender # for making 3d stuff
+      brightnessctl # for Controling the screenbrightness
       catnip # audio visualizer
-      whatsapp-for-linux
-      # cmake # a c compiler
       comma # runs programs without install
       darkhttpd # for running html websites
       # dooit # Console To-do list
+      dust # for finding heavy files/directories
       eza # modern ls
       fastfetch # Basic Info about System
       fd # find files
+      figlet # for creating Title Text
       file # determines filetypes
       firefox # browser of choice
       fzf # fuzzy file finder
       gimp # Opensource Photoshop
       gitui # similar to github but from terminal
+      glow # for looking at markdown text
       godot_4 # a gameengine
+      grimblast # For taking screenshots that go into the clipboard
       # htop # performance
       inkscape # vectorgraphic editor
       # itch # many free games
@@ -694,15 +681,15 @@ in {
       # morgen # calendar
       musikcube # Music player from Command-line
       ncdu # manualy find heavy data
+      networkmanagerapplet # For easily managing the local network
+      nil # lsp for nix
       # nixpkgs-unstable.obsidian # where all my personal notes are
-      obsidian
       # nixpkgs-unstable.signal-desktop # a messenging app
-      signal-desktop
+      obsidian
       obs-studio # screenrecorder
       openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
-      # plasma5Packages.kdeplasma-addons
       plasma5Packages.kmail
       prismlauncher # My minecraft instance manager of choice
       puddletag # song metadata editor
@@ -711,22 +698,30 @@ in {
       ripgrep # find specific stuff, looks and functions better than fd
       ruby # high level object oriented language
       rubyPackages.solargraph # lsp for ruby
+      signal-desktop
       speedtest-rs # Intertet speed test with a few extra infos
       starship # give helpful information and looks cool
+      swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
       # tauon # music player
       tig # display the commit history of a git repo, installed for my father
+      tmatrix # cool looking matrix effect
       tree # lists directory as a tree
+      tty-clock # a clock in the terminal
       units # converts units
       unzip # unzips something
       vlc # plays media
       vscodium # code editor
       watchexec # execute something when something
+      wayland-utils
       wget # installing from url
+      whatsapp-for-linux
       wiki-tui # Wikipedia but from the terminal
+      wl-clipboard
       wpsoffice # Libre office alternative
       xdotool # automate inputs
+      xfce.thunar # gui file manager from xfce
       zellij # Terminal Partitioner
       zip # zips something
     ];
