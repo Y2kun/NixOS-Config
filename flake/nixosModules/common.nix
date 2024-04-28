@@ -77,6 +77,11 @@ in {
       shell = "${pkgs.fish}/bin/fish";
     };
 
+    systemd.services = {
+      systemd-udev-settle.enable = false;
+      NetworkManager-wait-online.enable = false;
+    };
+
     home-manager.users.yuma = _: {
       imports = [
         self.nixosModules.helix
