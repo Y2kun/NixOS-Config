@@ -35,26 +35,28 @@ in {
       };
     };
 
-    fonts.packages = with pkgs; [
-      font-awesome
-      corefonts
-      dejavu_fonts
-      ipafont
-      liberation_ttf
-      noto-fonts-cjk
-      noto-fonts-emoji
-      fira
-      fira-code
-      # fira-code-nerd
-      fira-code-symbols
-      fira-mono
-    ];
+    fonts = {
+      packages = with pkgs; [
+        font-awesome
+        corefonts
+        dejavu_fonts
+        ipafont
+        liberation_ttf
+        noto-fonts-cjk
+        noto-fonts-emoji
+        fira
+        fira-code
+        # fira-code-nerd
+        fira-code-symbols
+        fira-mono
+      ];
 
-    fonts.fontconfig.defaultFonts = {
-      monospace = ["Fira Code" "IPAGothic"];
-      sansSerif = ["DejaVu Sans" "IPAPGothic"];
-      serif = ["DejaVu Serif" "IPAPMincho"];
-      emoji = ["Noto Fonts Emoji"];
+      fontconfig.defaultFonts = {
+        monospace = ["Fira Code" "IPAGothic"];
+        sansSerif = ["DejaVu Sans" "IPAPGothic"];
+        serif = ["DejaVu Serif" "IPAPMincho"];
+        emoji = ["Noto Fonts Emoji"];
+      };
     };
 
     time.timeZone = "Europe/Vienna";
