@@ -152,7 +152,7 @@ in {
         };
 
         alacritty = {
-          enable = true;
+          # enable = true;
 
           # general = {
           #   shell.program = "fish";
@@ -479,6 +479,7 @@ in {
             "mc" = "musikcube";
             "tm" = "tmatrix -s 17";
             "clock" = "tty-clock -sc";
+            "draw" = "wezterm imgcat";
           };
 
           interactiveShellInit = ''
@@ -525,7 +526,8 @@ in {
               -- color_scheme = "Seti (Gogh)",
               -- color_scheme = "Atelier Plateau (base16)",
               color_scheme = "Argonaut",
-              enable_wayland = true,
+              -- enable_wayland = true,
+              enable_wayland = false,
               window_background_opacity = 0.9,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
@@ -648,6 +650,9 @@ in {
       # meson
       # wayland-protocol
       # wlroots
+
+      imgcat # return a image
+
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning

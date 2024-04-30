@@ -31,7 +31,7 @@
 
         "$mod" = "SUPER";
         bind = [
-          "$mod, RETURN, exec, alacritty"
+          "$mod, RETURN, exec, wezterm"
           "$mod, SPACE, exec, wofi"
           "$mod, P, exec, grimblast copy area"
           "$mod, Q, killactive,"
