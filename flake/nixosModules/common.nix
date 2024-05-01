@@ -310,6 +310,7 @@ in {
 
               modules-left = [
                 # "hyprland/mode"
+                "backlight"
                 "hyprland/language"
               ];
 
@@ -330,6 +331,12 @@ in {
                 # "keyboard-state"
                 # "backlight"
               ];
+
+              backlight = {
+                device = "intel_backlight";
+                format = "{percent}% {icon}";
+                format-icons = ["" ""];
+              };
 
               tray = {
                 show-passive-items = true;
