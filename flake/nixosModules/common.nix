@@ -658,8 +658,6 @@ in {
       # wayland-protocol
       # wlroots
 
-      imgcat # return a image
-
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
       anki # learning cards maker and manager for learning
