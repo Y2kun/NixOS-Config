@@ -11,7 +11,6 @@
       xwayland.enable = true;
       systemd.enable = true;
 
-      # exec-once = hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16;
       # exec-once = "swww init"; # & sleep 0.5 && exec wallpaper_random;
 
       settings = {
@@ -28,6 +27,10 @@
           kb_layout = "jp, de";
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
         };
+        exec-once = [
+          "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+          "hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16"
+        ];
 
         "$mod" = "SUPER";
         bind = [
@@ -42,8 +45,8 @@
           ", XF86MonBrightnessDown, exec, brightnessctl -q s 10%-"
           ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
           ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-          ", XF86AudioMicMute, exec, wpctl set-source-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          # ", XF86AudioMicMute, exec, wpctl set-source-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
           # "$mod, C, exec, hyprctl switchxkblayout"
 

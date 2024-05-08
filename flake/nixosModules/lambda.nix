@@ -25,6 +25,7 @@
       # Enable touchpad support (enabled default in most desktopManager).
       xserver.libinput.enable = true;
       touchegg.enable = true;
+      # videoDrivers = ["amdgpu"];
     };
 
     users.users.yuma = {
@@ -41,7 +42,7 @@
 
     environment.systemPackages = with pkgs; [
       armcord
-      webcord-vencord
+      # webcord-vencord
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
       })
@@ -126,6 +127,17 @@
     # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
     # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    hardware = {
+      cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      nvidia.prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+
+        # integrated
+        amdgpuBusId = "PCI:7:0:0";
+      };
+    };
   };
 }
