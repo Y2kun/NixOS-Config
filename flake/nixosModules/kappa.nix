@@ -404,14 +404,25 @@ in {
       cpu.intel.updateMicrocode = true;
 
       opengl = {
-        driSupport32Bit = true;
         enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
         extraPackages32 = [pkgs.pkgsi686Linux.libva];
       };
 
       nvidia = {
         modesetting.enable = true;
         nvidiaSettings = true;
+
+        # prime = {
+        #   sync.enable = true;
+        #   # integrated
+        #   amdgpuBusId = "PCI:6:0:0";
+        #   # intelBusId = "PCI:0:0:0";
+
+        #   # dedicated
+        #   nvidiaBusId = "PCI:4:0:0";
+        # };
       };
 
       bluetooth = {
