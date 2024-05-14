@@ -55,6 +55,7 @@
       protonvpn-gui
       qemu
       teams-for-linux
+      # virtualbox
       virt-manager
       wine
     ];
