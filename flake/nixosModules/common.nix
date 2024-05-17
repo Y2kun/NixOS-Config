@@ -275,7 +275,7 @@ in {
               color: white;
               background: rgba(0, 0, 0, 0.5);
               border-radius: 25%;
-              border: 1px solid rgba(0, 170, 170, 0.3);
+              border: 2px solid rgba(0, 170, 170, 0.3);
             }
 
             #workspaces button {
