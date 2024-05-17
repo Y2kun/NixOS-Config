@@ -19,7 +19,7 @@ in {
       inputMethod = {
         enabled = "fcitx5";
         fcitx5.addons = with pkgs; [fcitx5-configtool fcitx5-anthy];
-        ibus.panel = "${pkgs.plasma5Packages.plasma-desktop}/lib/libexec/kimpanel-ibus-panel";
+        # ibus.panel = "${pkgs.plasma5Packages.plasma-desktop}/lib/libexec/kimpanel-ibus-panel";
       };
 
       extraLocaleSettings = {
@@ -325,7 +325,7 @@ in {
                 "cpu"
                 "memory"
                 "temperature"
-                "network"
+                # "network"
                 "battery"
                 "clock"
                 # "keyboard-state"
@@ -335,7 +335,7 @@ in {
               backlight = {
                 device = "intel_backlight";
                 format = "{percent}% {icon}";
-                format-icons = ["" ""];
+                format-icons = ["" ""];
               };
 
               tray = {
@@ -444,8 +444,8 @@ in {
               };
 
               "hyprland/language" = {
-                format-jp = "JP";
-                format-de = "DE";
+                format-jp = "Japanese";
+                format-de = "German";
               };
 
               # "hyprland/workspaces" = {
