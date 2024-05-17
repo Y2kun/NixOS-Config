@@ -659,6 +659,7 @@ in {
       # meson
       # wayland-protocol
       # wlroots
+      ani-cli
 
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing

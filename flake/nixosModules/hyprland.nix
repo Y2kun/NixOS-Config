@@ -26,6 +26,7 @@
         input = {
           kb_layout = "jp, de";
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
+          touchpad.disable_while_typing = false;
         };
         exec-once = [
           "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
