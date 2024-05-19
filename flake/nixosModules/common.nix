@@ -461,6 +461,7 @@ in {
         };
 
         hyprlock.enable = true;
+        # fastfetch.enable = true;
 
         lf = {
           # enable = true;

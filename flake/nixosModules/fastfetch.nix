@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.hyprlock = {
+  flake.nixosModules.fastfetch = {
     lib,
     config,
     pkgs,
@@ -12,9 +12,9 @@
     };
 
     config = lib.mkIf config.programs.fastfetch.enable {
-      home.packages = [pkgs.fastfetch];
+      # home.packages = [pkgs.fastfetch];
 
-      home.file.".config/fastfetch/config.jsonc".text = ''
+      programs.file.".config/fastfetch/config.jsonc".text = ''
           {
           "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
           "modules": [
