@@ -86,7 +86,7 @@ in {
       imports = [
         self.nixosModules.helix
         self.nixosModules.hyprland
-        self.nixosModules.hyprlock
+        # self.nixosModules.hyprlock
       ];
 
       home = {
@@ -460,7 +460,7 @@ in {
           };
         };
 
-        hyprlock.enable = true;
+        # hyprlock.enable = true;
         # fastfetch.enable = true;
 
         lf = {
