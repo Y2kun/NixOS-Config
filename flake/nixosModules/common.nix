@@ -590,7 +590,7 @@ in {
       };
 
       desktopManager = {
-        plasma6.enable = true;
+        # plasma6.enable = true;
         # plasma5.enable = true;
         # plasma6.runUsingSystemd = true;
       };
@@ -602,6 +602,15 @@ in {
           enable = true;
           wayland.enable = true;
         };
+        # lightdm = {
+        #   enable = true;
+        #   mini = {
+        #     enable = true;
+        #     # extraConfig = {
+
+        #     # };
+        #   };
+        # };
       };
 
       xserver = {
@@ -648,13 +657,13 @@ in {
 
     virtualisation.waydroid.enable = true;
 
-    environment.plasma6.excludePackages = with pkgs.libsForQt5; [
-      konsole
-      oxygen
-      spectacle
-      kate
-      kwrited
-    ];
+    # environment.plasma6.excludePackages = with pkgs.libsForQt5; [
+    #   konsole
+    #   oxygen
+    #   spectacle
+    #   kate
+    #   kwrited
+    # ];
 
     environment.systemPackages = with pkgs; [
       # meson
