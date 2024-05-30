@@ -140,7 +140,8 @@ in {
       };
 
       programs = {
-        home-manager = {
+        home-manager.enable = true;
+        hyprlock = {
           enable = true;
           extraConfig = ''
             $text_color = rgba(E2E2E2FF)
@@ -551,7 +552,6 @@ in {
           };
         };
 
-        hyprlock.enable = true;
         # fastfetch.enable = true;
 
         lf = {
