@@ -143,7 +143,7 @@ in {
         home-manager.enable = true;
         hyprlock = {
           enable = true;
-          setting = {
+          settings = {
             text_color = "rgba(E2E2E2FF)";
             entry_background_color = "rgba(13131311)";
             entry_border_color = "rgba(91919155)";
@@ -158,7 +158,7 @@ in {
 
             background = {
               color = "rgba(13131377)";
-              path = ./home/yuma/wallpaper/wallhaven-bastion.jpg;
+              path = toString ./home/yuma/wallpaper/wallhaven-bastion.jpg;
               # path = screenshot;
               blur_size = 5;
               blur_passes = 4;
