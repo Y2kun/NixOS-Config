@@ -47,9 +47,10 @@
         commandLineArgs = "--load-media-component-extension=1";
       })
       # discordo
-      # docker
-      # docker-client
-      # docker-compose
+      lazydocker
+      docker
+      docker-client
+      docker-compose
       # logisim-evolution
       # osu-lazer-bin
       protonvpn-gui

@@ -86,7 +86,6 @@ in {
       imports = [
         self.nixosModules.helix
         self.nixosModules.hyprland
-        # self.nixosModules.hyprlock
       ];
 
       home = {
@@ -141,7 +140,99 @@ in {
       };
 
       programs = {
-        home-manager.enable = true;
+        home-manager = {
+          enable = true;
+          extraConfig = ''
+            $text_color = rgba(E2E2E2FF)
+            $entry_background_color = rgba(13131311)
+            $entry_border_color = rgba(91919155)
+            $entry_color = rgba(C6C6C6FF)
+            $font_family = Fira
+            $font_family_clock = Fira
+            $font_material_symbols = Fira Code Symbols
+
+            general {
+              grace = 0.5
+            }
+
+            background {
+                color = rgba(13131377)
+                path = {{./home/yuma/wallpaper/nix.jpg}}
+                # path = screenshot
+                blur_size = 5
+                blur_passes = 4
+            }
+
+            input-field {
+                monitor =
+                size = 250, 50
+                outline_thickness = 2
+                dots_size = 0.1
+                dots_spacing = 0.3
+                outer_color = $entry_border_color
+                inner_color = $entry_background_color
+                font_color = $entry_color
+                # fade_on_empty = true
+
+                position = 0, 20
+                halign = center
+                valign = center
+            }
+
+            label { # Clock
+                monitor =
+                text = $TIME
+                shadow_passes = 1
+                shadow_boost = 0.5
+                color = $text_color
+                font_size = 65
+                font_family = $font_family_clock
+
+                position = 0, 300
+                halign = center
+                valign = center
+            }
+            label { # Greeting
+                monitor =
+                text = Greetings $USER
+                shadow_passes = 1
+                shadow_boost = 0.5
+                color = $text_color
+                font_size = 24
+                font_family = $font_family
+
+                position = 0, 240
+                halign = center
+                valign = center
+            }
+            # label { # lock icon
+            #     monitor =
+            #     text = lock
+            #     shadow_passes = 1
+            #     shadow_boost = 0.5
+            #     color = $text_color
+            #     font_size = 21
+            #     font_family = $font_material_symbols
+
+            #     position = 0, 65
+            #     halign = center
+            #     valign = bottom
+            # }
+            label { # "locked" text
+                monitor =
+                text = This Device is currently locked
+                shadow_passes = 1
+                shadow_boost = 0.5
+                color = $text_color
+                font_size = 14
+                font_family = $font_family
+
+                position = 0, 50
+                halign = center
+                valign = bottom
+            }
+          '';
+        };
         btop.enable = true;
         gh.enable = true;
 
@@ -460,7 +551,7 @@ in {
           };
         };
 
-        # hyprlock.enable = true;
+        hyprlock.enable = true;
         # fastfetch.enable = true;
 
         lf = {
@@ -670,6 +761,8 @@ in {
       # wayland-protocol
       # wlroots
       ani-cli
+      ark
+      gwenview
 
       alejandra # formats nix files
       amberol # for playing single tracks. usefull for testing
@@ -677,11 +770,11 @@ in {
       aseprite # pixel art editor
       audacity # for editing audio
       bat # returns file content like cat, looks better
-      blender # for making 3d stuff
+      # blender # for making 3d stuff
       brightnessctl # for Controling the screenbrightness
       catnip # audio visualizer
       comma # runs programs without install
-      darkhttpd # for running html websites
+      # darkhttpd # for running html websites
       # dooit # Console To-do list
       dust # for finding heavy files/directories
       eza # modern ls
@@ -693,7 +786,7 @@ in {
       fzf # fuzzy file finder
       gimp # Opensource Photoshop
       gitui # similar to github but from terminal
-      glow # for looking at markdown text
+      # glow # for looking at markdown text
       godot_4 # a gameengine
       grimblast # For taking screenshots that go into the clipboard
       # htop # performance
@@ -728,7 +821,7 @@ in {
       rubyPackages.solargraph # lsp for ruby
       signal-desktop
       speedtest-rs # Intertet speed test with a few extra infos
-      starship # give helpful information and looks cool
+      # starship # give helpful information and looks cool
       swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
