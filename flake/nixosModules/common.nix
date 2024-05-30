@@ -143,96 +143,101 @@ in {
         home-manager.enable = true;
         hyprlock = {
           enable = true;
-          extraConfig = ''
-            $text_color = rgba(E2E2E2FF)
-            $entry_background_color = rgba(13131311)
-            $entry_border_color = rgba(91919155)
-            $entry_color = rgba(C6C6C6FF)
-            $font_family = Fira
-            $font_family_clock = Fira
-            $font_material_symbols = Fira Code Symbols
+          setting = {
+            text_color = "rgba(E2E2E2FF)";
+            entry_background_color = "rgba(13131311)";
+            entry_border_color = "rgba(91919155)";
+            entry_color = "rgba(C6C6C6FF)";
+            font_family = "Fira";
+            font_family_clock = "Fira";
+            font_material_symbols = "Fira Code Symbols";
 
-            general {
-              grace = 0.5
-            }
+            general = {
+              grace = 0.5;
+            };
 
-            background {
-                color = rgba(13131377)
-                path = {{./home/yuma/wallpaper/nix.jpg}}
-                # path = screenshot
-                blur_size = 5
-                blur_passes = 4
-            }
+            background = {
+              color = "rgba(13131377)";
+              path = ./home/yuma/wallpaper/wallhaven-bastion.jpg;
+              # path = screenshot;
+              blur_size = 5;
+              blur_passes = 4;
+            };
 
-            input-field {
-                monitor =
-                size = 250, 50
-                outline_thickness = 2
-                dots_size = 0.1
-                dots_spacing = 0.3
-                outer_color = $entry_border_color
-                inner_color = $entry_background_color
-                font_color = $entry_color
-                # fade_on_empty = true
+            input-field = {
+              monitor = "";
+              size = "250, 50";
+              outline_thickness = 2;
+              dots_size = 0.1;
+              dots_spacing = 0.3;
+              outer_color = "$entry_border_color";
+              inner_color = "$entry_background_color";
+              font_color = "$entry_color";
+              # fade_on_empty = true
 
-                position = 0, 20
-                halign = center
-                valign = center
-            }
+              position = "0, 20";
+              halign = "center";
+              valign = "center";
 
-            label { # Clock
-                monitor =
-                text = $TIME
-                shadow_passes = 1
-                shadow_boost = 0.5
-                color = $text_color
-                font_size = 65
-                font_family = $font_family_clock
+              label = [
+                {
+                  # Clock
+                  monitor = "";
+                  text = "$TIME";
+                  shadow_passes = 1;
+                  shadow_boost = 0.5;
+                  color = "$text_color";
+                  font_size = 65;
+                  font_family = "$font_family_clock";
 
-                position = 0, 300
-                halign = center
-                valign = center
-            }
-            label { # Greeting
-                monitor =
-                text = Greetings $USER
-                shadow_passes = 1
-                shadow_boost = 0.5
-                color = $text_color
-                font_size = 24
-                font_family = $font_family
+                  position = "0, 300";
+                  halign = "center";
+                  valign = "center";
+                }
+                {
+                  # Greeting
+                  monitor = "";
+                  text = "Greetings $USER";
+                  shadow_passes = 1;
+                  shadow_boost = 0.5;
+                  color = "$text_color";
+                  font_size = 24;
+                  font_family = "$font_family";
 
-                position = 0, 240
-                halign = center
-                valign = center
-            }
-            # label { # lock icon
-            #     monitor =
-            #     text = lock
-            #     shadow_passes = 1
-            #     shadow_boost = 0.5
-            #     color = $text_color
-            #     font_size = 21
-            #     font_family = $font_material_symbols
+                  position = "0, 240";
+                  halign = "center";
+                  valign = "center";
+                }
+                # { # lock icon
+                #     monitor = "";
+                #     text = "lock";
+                #     shadow_passes = 1;
+                #     shadow_boost = 0.5;
+                #     color = "$text_color";
+                #     font_size = 21;
+                #     font_family = "$font_material_symbols";
 
-            #     position = 0, 65
-            #     halign = center
-            #     valign = bottom
-            # }
-            label { # "locked" text
-                monitor =
-                text = This Device is currently locked
-                shadow_passes = 1
-                shadow_boost = 0.5
-                color = $text_color
-                font_size = 14
-                font_family = $font_family
+                #     position = "0, 65";
+                #     halign = "center";
+                #     valign = "bottom";
+                # }
+                {
+                  # "locked" text
+                  monitor = "";
+                  text = "This Device is currently locked";
+                  shadow_passes = 1;
+                  shadow_boost = 0.5;
+                  color = "$text_color";
+                  font_size = 14;
+                  font_family = "$font_family";
 
-                position = 0, 50
-                halign = center
-                valign = bottom
-            }
-          '';
+                  position = "0, 50";
+                  halign = "center";
+                  valign = "bottom";
+                }
+              ];
+            };
+          };
         };
         btop.enable = true;
         gh.enable = true;
