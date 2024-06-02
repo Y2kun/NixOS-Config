@@ -99,17 +99,17 @@
         # packages = with pkgs; [plasma-browser-integration];
         pointerCursor = {
           gtk.enable = true;
-          # package = pkgs.bibata-cursors;
-          # name = "Bibata-Modern-Classic";
           package = pkgs.afterglow-cursors-recolored;
           name = "Afterglow-Cursours-Recolored-Dracula-Cyan";
+          # package = pkgs.bibata-cursors;
+          # name = "Bibata-Modern-Classic";
           # package = pkgs.phinger-cursors;
           # name = "Default"; # Doubtfull how this works
           size = 12;
         };
       };
 
-      services.flameshot.enable = true;
+      # services.flameshot.enable = true;
 
       programs = {
         home-manager.enable = true;
@@ -249,20 +249,20 @@
         hwRender = true;
       };
 
-      desktopManager = {
-        # plasma6.enable = true;
-        # plasma5.enable = true;
-        # plasma6.runUsingSystemd = true;
-      };
+      # desktopManager = {
+      #   plasma6.enable = true;
+      #   plasma5.enable = true;
+      #   plasma6.runUsingSystemd = true;
+      # };
 
-      displayManager = {
-        # defaultSession = "plasma";
-        # defaultSession = "plasmawayland";
-        # sddm = {
-        #   enable = true;
-        #   wayland.enable = true;
-        # };
-      };
+      # displayManager = {
+      #   defaultSession = "plasma";
+      #   defaultSession = "plasmawayland";
+      #   sddm = {
+      #     enable = true;
+      #     wayland.enable = true;
+      #   };
+      # };
 
       # xserver.displayManager = {
       #   lightdm = {
@@ -275,6 +275,7 @@
       #     };
       #   };
       # };
+
       xserver.displayManager = {
         gdm = {
           enable = true;
