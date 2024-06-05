@@ -31,6 +31,10 @@
         exec-once = [
           "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
           "hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16"
+          "[workspace 1 silent] firefox"
+          "[workspace 2 silent] wezterm"
+          "[workspace 9 silent] thunar"
+          "[workspace 10 silent] armcord"
         ];
 
         "$mod" = "SUPER";

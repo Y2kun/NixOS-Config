@@ -84,6 +84,7 @@
       NetworkManager-wait-online.enable = false;
     };
 
+    home-manager.backupFileExtension = "backup";
     home-manager.users.yuma = _: {
       imports = [
         self.nixosModules.alacritty
@@ -113,7 +114,28 @@
 
       programs = {
         home-manager.enable = true;
-        btop.enable = true;
+        btop = {
+          enable = true;
+          settings = {
+            theme_background = false;
+            truecolor = true;
+            force_tty = false;
+            rounded_corners = true;
+            graph_symbol = "braille";
+            update_ms = 500;
+            proc_tree = true;
+          };
+        };
+
+        fastfetch = {
+          enable = true;
+          # settings = {
+          #   logo = {
+          #     source = "nixos_small";
+          #   };
+          # };
+        };
+
         gh.enable = true;
 
         git = {
@@ -121,7 +143,6 @@
           userName = "Y2kun";
           userEmail = "me@y2kun.dev";
         };
-        # fastfetch.enable = true;
 
         lf = {
           # enable = true;
@@ -148,6 +169,8 @@
             "tm" = "tmatrix -s 17";
             "clock" = "tty-clock -sc";
             "draw" = "wezterm imgcat";
+            "nixos-apply" = "sudo colmena apply-local";
+            "gc" = "sudo nix-collect-garbage --delete-old";
           };
 
           interactiveShellInit = ''
@@ -338,10 +361,13 @@
       # meson
       # wayland-protocol
       # wlroots
-      ani-cli
-      ark
-      gwenview
-      okular
+      ani-cli # Animeviewer
+      syncplay # for ani-cli watching with others
+      ark # ZIP-Viewer
+      gwenview # Imageviewer
+      okular # PDF and MD viewer
+      hugo
+      # dotnetPackages.Nuget
 
       alejandra # formats nix files
       # amberol # for playing single tracks. usefull for testing
@@ -351,13 +377,13 @@
       bat # returns file content like cat, looks better
       # blender # for making 3d stuff
       brightnessctl # for Controling the screenbrightness
-      catnip # audio visualizer
+      # catnip # audio visualizer
+      cava # audio visualizer
       comma # runs programs without install
       # darkhttpd # for running html websites
       # dooit # Console To-do list
       dust # for finding heavy files/directories
       eza # modern ls
-      fastfetch # Basic Info about System
       fd # find files
       figlet # for creating Title Text
       file # determines filetypes
@@ -365,7 +391,7 @@
       fzf # fuzzy file finder
       gimp # Opensource Photoshop
       gitui # similar to github but from terminal
-      # glow # for looking at markdown text
+      glow # for looking at markdown text
       godot_4 # a gameengine
       grimblast # For taking screenshots that go into the clipboard
       # htop # performance
