@@ -60,6 +60,7 @@
 
           modules-left = [
             # "hyprland/mode"
+            "custom/exit"
             "backlight"
             "hyprland/language"
           ];
@@ -83,6 +84,12 @@
             # "backlight"
           ];
 
+          "custom/exit" = {
+            format = "";
+            on-click = "wlogout";
+            tooltip = false;
+          };
+
           "group/hardware" = {
             orientation = "inherit";
             drawer = {
@@ -91,9 +98,9 @@
               transition-left-to-right = false;
             };
             modules = [
-              "disk"
-              "cpu"
               "memory"
+              "cpu"
+              "disk"
               "temperature"
             ];
           };

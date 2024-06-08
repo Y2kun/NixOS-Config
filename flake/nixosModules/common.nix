@@ -352,13 +352,15 @@
     environment.systemPackages = with pkgs; [
       # meson
       # wayland-protocol
-      # wlroots
+      wlroots
+      wlogout
       ani-cli # Animeviewer
       syncplay # for ani-cli watching with others
       ark # ZIP-Viewer
       gwenview # Imageviewer
       okular # PDF and MD viewer
       hugo
+      pomodoro
       # dotnetPackages.Nuget
 
       alejandra # formats nix files
