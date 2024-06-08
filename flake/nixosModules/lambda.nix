@@ -98,23 +98,26 @@
     virtualisation.libvirtd.enable = true;
 
     # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
-    boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
-    boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-amd"];
-    boot.extraModulePackages = [];
-
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/05953257-79bf-4a5b-938e-760a1c033d80";
-      fsType = "ext4";
+    boot = {
+      loader.systemd-boot.enable = true;
+      loader.efi.canTouchEfiVariables = true;
+      loader.efi.efiSysMountPoint = "/boot/efi";
+      initrd.availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
+      initrd.kernelModules = [];
+      kernelModules = ["kvm-amd"];
+      extraModulePackages = [];
     };
 
-    fileSystems."/boot/efi" = {
-      device = "/dev/disk/by-uuid/CAF8-8EC8";
-      fsType = "vfat";
+    fileSystems = {
+      "/" = {
+        device = "/dev/disk/by-uuid/05953257-79bf-4a5b-938e-760a1c033d80";
+        fsType = "ext4";
+      };
+
+      "/boot/efi" = {
+        device = "/dev/disk/by-uuid/CAF8-8EC8";
+        fsType = "vfat";
+      };
     };
 
     swapDevices = [

@@ -89,6 +89,7 @@
       imports = [
         self.nixosModules.alacritty
         self.nixosModules.dunst
+        self.nixosModules.fastfetch
         self.nixosModules.helix
         self.nixosModules.hyprland
         self.nixosModules.hyprlock
@@ -125,15 +126,6 @@
             update_ms = 500;
             proc_tree = true;
           };
-        };
-
-        fastfetch = {
-          enable = true;
-          # settings = {
-          #   logo = {
-          #     source = "nixos_small";
-          #   };
-          # };
         };
 
         gh.enable = true;
