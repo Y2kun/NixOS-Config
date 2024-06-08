@@ -71,16 +71,32 @@
           modules-right = [
             "tray"
             "wireplumber"
-            "disk"
-            "cpu"
-            "memory"
-            "temperature"
+            "group/hardware"
+            # "disk"
+            # "cpu"
+            # "memory"
+            # "temperature"
             # "network"
             "battery"
             "clock"
             # "keyboard-state"
             # "backlight"
           ];
+
+          "group/hardware" = {
+            orientation = "inherit";
+            drawer = {
+              transition-duration = 300;
+              children-class = "not-memory";
+              transition-left-to-right = false;
+            };
+            modules = [
+              "disk"
+              "cpu"
+              "memory"
+              "temperature"
+            ];
+          };
 
           backlight = {
             device = "intel_backlight";
@@ -98,28 +114,31 @@
             format-muted = "MUTE";
             format-icons = {
               headphones = "";
-              handsfree = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
+              # handsfree = "";
+              # headset = "";
+              # phone = "";
+              # portable = "";
+              # car = "";
               default = ["🔈" "🔉" "🔊"];
             };
-            on-click-left = "exec pavucontrol";
+            on-click-left = "pavucontrol";
           };
 
           disk = {
             format = " {}%";
             tooltip-format = "{used} / {total} used";
+            on-click = "wezterm -e btop";
           };
 
           cpu = {
             format = " {usage}%";
+            on-click = "wezterm -e btop";
           };
 
           memory = {
             format = " {}%";
             tooltip-format = "{used:0.1f}G / {total:0.1f}G used";
+            on-click = "wezterm -e btop";
           };
 
           temperature = {
