@@ -30,7 +30,7 @@
 
         #workspaces button {
           color: #fff;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 100, 100, 0.7);
           border-radius: 45%;
           border: 2px solid rgba(255, 255, 255, 0.3);
           padding-left: 5px;
@@ -39,6 +39,10 @@
 
         #workspaces button.active {
           background: rgba(0, 170, 170, 0.7);
+        }
+
+        #workspaces button.empty {
+          background: rgba(0, 0, 0, 0.5);
         }
 
         #workspaces button:hover {
@@ -224,14 +228,32 @@
             format-de = "German";
           };
 
-          # "hyprland/workspaces" = {
-          #   format = "{icons}";
-          #   format-icons = {
-          #     default = "0";
-          #     active = "1";
-          #     critical = "8";
-          #   };
-          # };
+          "hyprland/workspaces" = {
+            active-only = false;
+            all-outputs = true;
+            disable-scroll = false;
+            # "on-scroll-up" = "hyprctl dispatch workspace -1";
+            # "on-scroll-down" = "hyprctl dispatch workspace +1";
+            format = "{icon}";
+            on-click = "activate";
+            format-icons = {
+              "1" = "一";
+              "2" = "二";
+              "3" = "三";
+              "4" = "四";
+              "5" = "五";
+              "6" = "六";
+              "7" = "七";
+              "8" = "八";
+              "9" = "九";
+              "10" = "十";
+              # urgent = "";
+              # active = "";
+              # default = "󰧞";
+              sort-by-number = true;
+            };
+            persistent-workspaces = {"*" = 10;};
+          };
         };
       };
     };
