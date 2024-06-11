@@ -34,7 +34,7 @@
           "[workspace 1 silent] firefox"
           "[workspace 2 silent] wezterm"
           "[workspace 9 silent] thunar"
-          "[workspace 10 silent] armcord"
+          "[workspace 10 silent] discordcanary"
         ];
 
         "$mod" = "SUPER";

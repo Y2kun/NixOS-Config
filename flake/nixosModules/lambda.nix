@@ -41,12 +41,14 @@
     };
 
     environment.systemPackages = with pkgs; [
-      armcord
-      # webcord-vencord
+      # armcord
+      (discord-canary.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
       })
-      # discordo
       lazydocker
       docker
       docker-client

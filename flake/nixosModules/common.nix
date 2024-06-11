@@ -359,6 +359,7 @@
       ark # ZIP-Viewer
       gwenview # Imageviewer
       okular # PDF and MD viewer
+      dolphin
       hugo
       pomodoro
       # dotnetPackages.Nuget
