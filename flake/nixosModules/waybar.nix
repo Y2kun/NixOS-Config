@@ -20,7 +20,7 @@
           background: rgba(0, 0, 0, 0.55);
         }
 
-        #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
+        #backlight, #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
           background: transparent;
           color: white;
           background: rgba(0, 0, 0, 0.5);
@@ -28,13 +28,20 @@
           border: 2px solid rgba(0, 170, 170, 0.3);
         }
 
-        #workspaces button {
-          color: #fff;
-          background: rgba(0, 100, 100, 0.7);
-          border-radius: 45%;
+        #workspaces {
+          border-radius: 5%;
           border: 2px solid rgba(255, 255, 255, 0.3);
           padding-left: 5px;
           padding-right: 5px;
+        }
+
+        #workspaces button {
+          color: #fff;
+          background: rgba(0, 100, 100, 0.7);
+          /*border-radius: 45%;*/
+          /*border: 2px solid rgba(255, 255, 255, 0.3);*/
+          /*padding-left: 5px;*/
+          /*padding-right: 5px;*/
         }
 
         #workspaces button.active {
@@ -200,8 +207,8 @@
             format-alt = "{time} {icon}";
             tooltip-format = "{power}";
             format-icons = ["" "" "" "" ""];
-            # format-charging = " {capacity}%";
-            format-plugged = " { capacity}%";
+            format-charging = " {capacity}%";
+            format-plugged = " {capacity}%";
             interval = 5;
             states = {
               warning = 20;

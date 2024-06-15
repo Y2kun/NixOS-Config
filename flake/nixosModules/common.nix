@@ -84,6 +84,12 @@
       NetworkManager-wait-online.enable = false;
     };
 
+    boot.extraModulePackages = [pkgs.linuxPackages.v4l2loopback];
+    boot.extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+    security.polkit.enable = true;
+
     home-manager.backupFileExtension = "backup";
     home-manager.users.yuma = _: {
       imports = [
@@ -114,6 +120,15 @@
       # services.flameshot.enable = true;
 
       programs = {
+        obs-studio = {
+          enable = true;
+          plugins = with pkgs.obs-studio-plugins; [
+            wlrobs
+            # obs-backgroundremoval
+            obs-pipewire-audio-capture
+          ];
+        };
+
         home-manager.enable = true;
         btop = {
           enable = true;
@@ -362,6 +377,7 @@
       dolphin
       hugo
       pomodoro
+      thunderbird
       # dotnetPackages.Nuget
 
       alejandra # formats nix files
@@ -407,11 +423,10 @@
       # nixpkgs-unstable.obsidian # where all my personal notes are
       # nixpkgs-unstable.signal-desktop # a messenging app
       obsidian
-      obs-studio # screenrecorder
       openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
-      kmail # Mail
+      # kmail # Mail
       prismlauncher # My minecraft instance manager of choice
       puddletag # song metadata editor
       qalculate-gtk # advanced calculator
