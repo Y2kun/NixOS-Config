@@ -378,6 +378,7 @@
       hugo
       pomodoro
       thunderbird
+      ardour
       # dotnetPackages.Nuget
 
       alejandra # formats nix files
