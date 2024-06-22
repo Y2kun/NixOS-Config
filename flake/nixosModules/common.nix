@@ -370,7 +370,7 @@
       wlroots
       wlogout
       ani-cli # Animeviewer
-      syncplay # for ani-cli watching with others
+      # syncplay # for ani-cli watching with others
       ark # ZIP-Viewer
       gwenview # Imageviewer
       okular # PDF and MD viewer
@@ -380,6 +380,10 @@
       thunderbird
       ardour
       # dotnetPackages.Nuget
+
+      (chromium.override {
+        commandLineArgs = "--load-media-component-extension=1";
+      })
 
       alejandra # formats nix files
       # amberol # for playing single tracks. usefull for testing

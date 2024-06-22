@@ -46,9 +46,6 @@
         withOpenASAR = true;
         withVencord = true;
       })
-      (chromium.override {
-        commandLineArgs = "--load-media-component-extension=1";
-      })
       wireshark
       lazydocker
       docker
