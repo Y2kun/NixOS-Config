@@ -387,25 +387,25 @@
 
       alejandra # formats nix files
       # amberol # for playing single tracks. usefull for testing
-      anki # learning cards maker and manager for learning
+      # anki # learning cards maker and manager for learning
       aseprite # pixel art editor
       audacity # for editing audio
       bat # returns file content like cat, looks better
       # blender # for making 3d stuff
       brightnessctl # for Controling the screenbrightness
       # catnip # audio visualizer
-      cava # audio visualizer
+      # cava # audio visualizer
       comma # runs programs without install
       # darkhttpd # for running html websites
       # dooit # Console To-do list
-      dust # for finding heavy files/directories
+      # dust # for finding heavy files/directories
       eza # modern ls
       fd # find files
       figlet # for creating Title Text
       file # determines filetypes
       firefox # browser of choice
       fzf # fuzzy file finder
-      gimp # Opensource Photoshop
+      # gimp # Opensource Photoshop
       gitui # similar to github but from terminal
       glow # for looking at markdown text
       godot_4 # a gameengine
@@ -413,11 +413,11 @@
       # htop # performance
       inkscape # vectorgraphic editor
       # itch # many free games
-      jq # Json formater
+      # jq # Json formater
       krita # In some ways better than gimp
       libreoffice # it's libre office
       # lite-xl # editor i used for lobster
-      lutris # Games launcher
+      # lutris # Games launcher
       magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
@@ -442,12 +442,12 @@
       signal-desktop
       speedtest-rs # Intertet speed test with a few extra infos
       # starship # give helpful information and looks cool
-      swww # for backgrounds
+      # swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
       # tauon # music player
       tig # display the commit history of a git repo, installed for my father
-      tmatrix # cool looking matrix effect
+      # tmatrix # cool looking matrix effect
       tree # lists directory as a tree
       tty-clock # a clock in the terminal
       units # converts units
@@ -463,6 +463,7 @@
       wpsoffice # Libre office alternative
       xdotool # automate inputs
       xfce.thunar # gui file manager from xfce
+      xfce.xfconf # for thunar to remember config
       zellij # Terminal Partitioner
       zip # zips something
     ];
@@ -476,11 +477,11 @@
       BROWSER = "firefox";
       TERMINAL = "wezterm";
 
-      WLR_NO_HARDWARE_CURSORS = "1";
-      WLR_RENDERER_ALLOW_SOFTWARE = "1";
+      WLR_NO_HARDWARE_CURSORS = 1;
+      WLR_RENDERER_ALLOW_SOFTWARE = 1;
 
       # Hint Electon apps to use wayland
-      NIXOS_OZONE_WL = "1";
+      NIXOS_OZONE_WL = 1;
       CLUTTER_BACKEND = "wayland";
       XDG_SESSION_TYPE = "wayland";
 

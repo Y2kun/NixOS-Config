@@ -9,8 +9,8 @@
       enable = true;
       settings = {
         logo = {
-          source = "~/wallpaper/logos/nixos-hyprland.png";
-          type = "auto";
+          source = "/home/yuma/wallpaper/logos/nixos-hyprland.png";
+          type = "kitty";
           height = 20;
           padding = {
             top = 1;
