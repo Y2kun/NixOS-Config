@@ -40,7 +40,7 @@
           }
           {
             type = "packages";
-            format = "{} (pacman)";
+            format = "{}";
             key = " ├ 󰏖 ";
             keyColor = "31";
           }

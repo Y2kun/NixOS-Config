@@ -121,7 +121,7 @@
 
       programs = {
         obs-studio = {
-          enable = true;
+          enable = false;
           plugins = with pkgs.obs-studio-plugins; [
             wlrobs
             # obs-backgroundremoval
@@ -376,10 +376,11 @@
       okular # PDF and MD viewer
       dolphin
       hugo
-      pomodoro
+      # pomodoro
       thunderbird
       ardour
       # dotnetPackages.Nuget
+      waypaper
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
@@ -428,7 +429,7 @@
       # nixpkgs-unstable.obsidian # where all my personal notes are
       # nixpkgs-unstable.signal-desktop # a messenging app
       obsidian
-      openshot-qt # video editor
+      # openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
       # kmail # Mail
@@ -442,7 +443,7 @@
       signal-desktop
       speedtest-rs # Intertet speed test with a few extra infos
       # starship # give helpful information and looks cool
-      # swww # for backgrounds
+      swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
       # tauon # music player

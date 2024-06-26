@@ -11,8 +11,6 @@
       xwayland.enable = true;
       systemd.enable = true;
 
-      # exec-once = "swww init"; # & sleep 0.5 && exec wallpaper_random;
-
       settings = {
         general = {
           border_size = 3;
@@ -29,8 +27,10 @@
           touchpad.disable_while_typing = false;
         };
         exec-once = [
-          "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
-          "hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16"
+          # "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+          # "hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16"
+          "swww-daemon"
+          "systemctl --user restart waybar.service"
           "[workspace 1 silent] firefox"
           "[workspace 2 silent] wezterm"
           "[workspace 9 silent] thunar"

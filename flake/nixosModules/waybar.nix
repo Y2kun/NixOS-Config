@@ -20,7 +20,7 @@
           background: rgba(0, 0, 0, 0.55);
         }
 
-        #backlight, #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
+        #custom-exit, #backlight, #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
           background: transparent;
           color: white;
           background: rgba(0, 0, 0, 0.5);
