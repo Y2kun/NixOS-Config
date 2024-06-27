@@ -20,7 +20,7 @@
           background: rgba(0, 0, 0, 0.55);
         }
 
-        #custom-exit, #backlight, #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
+        #custom-exit, #custom-waybar-mpris, #backlight, #language, #temperature, #battery, #tray, #wireplumber, #disk, #cpu, #memory, #clock, #network {
           background: transparent;
           color: white;
           background: rgba(0, 0, 0, 0.5);
@@ -44,12 +44,12 @@
           /*padding-right: 5px;*/
         }
 
-        #workspaces button.active {
-          background: rgba(0, 170, 170, 0.7);
-        }
-
         #workspaces button.empty {
           background: rgba(0, 0, 0, 0.5);
+        }
+
+        #workspaces button.active {
+          background: rgba(0, 170, 170, 0.7);
         }
 
         #workspaces button:hover {
@@ -74,6 +74,7 @@
             "custom/exit"
             "backlight"
             "hyprland/language"
+            "custom/waybar-mpris"
           ];
 
           modules-center = [
@@ -96,9 +97,24 @@
           ];
 
           "custom/exit" = {
-            format = "";
+            format = "  ";
             on-click = "wlogout";
-            tooltip = false;
+            tooltip-format = "Logout?";
+          };
+
+          "custom/waybar-mpris" = {
+            return-type = "json";
+            exec = "waybar-mpris --autofocus --text-format=\"%i  [%p/%d] %a - %t\"";
+            on-click = "waybar-mpris --send toggle";
+            # This option will switch between players on right click.
+            "on-click-right" = "waybar-mpris --send player-next";
+            # The options below will switch the selected player on scroll
+            # "on-scroll-up" = "waybar-mpris --send player-next",
+            # "on-scroll-down" = "waybar-mpris --send player-prev",
+            # The options below will go to next/previous track on scroll
+            # "on-scroll-up" = "waybar-mpris --send next",
+            # "on-scroll-down" = "waybar-mpris --send prev",
+            escape = true;
           };
 
           "group/hardware" = {

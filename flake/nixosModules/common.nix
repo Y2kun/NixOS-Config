@@ -143,6 +143,10 @@
           };
         };
 
+        wlogout = {
+          enable = true;
+        };
+
         gh.enable = true;
 
         git = {
@@ -368,7 +372,6 @@
       # meson
       # wayland-protocol
       wlroots
-      wlogout
       ani-cli # Animeviewer
       # syncplay # for ani-cli watching with others
       ark # ZIP-Viewer
@@ -381,6 +384,7 @@
       ardour
       # dotnetPackages.Nuget
       waypaper
+      waybar-mpris
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
