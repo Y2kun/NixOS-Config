@@ -395,7 +395,6 @@
 
       opengl = {
         enable = true;
-        driSupport = true;
         driSupport32Bit = true;
         extraPackages32 = [pkgs.pkgsi686Linux.libva];
       };
