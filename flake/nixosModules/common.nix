@@ -170,6 +170,7 @@
             "draw" = "wezterm imgcat";
             "nixos-apply" = "sudo colmena apply-local";
             "gc" = "sudo nix-collect-garbage --delete-old";
+            "nixos-upgrade" = "nix flake lock --update-input nixpkgs";
           };
 
           interactiveShellInit = ''
