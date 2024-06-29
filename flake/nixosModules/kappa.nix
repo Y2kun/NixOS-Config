@@ -1,14 +1,4 @@
-{inputs, ...}: let
-  nixpkgs-unstable = (import inputs.nixpkgs-unstable) {
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-    };
-    system = "x86_64-linux";
-  };
-in {
+{inputs, ...}: {
   flake.nixosModules.kappa = {
     name,
     config,
@@ -43,10 +33,10 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      # nixpkgs-unstable.r2modman # modloader for some games
+      # r2modman # modloader for some games
       r2modman
-      # nixpkgs-unstable.stt
-      # nixpkgs-unstable.tts
+      # stt
+      # tts
     ];
 
     # packages i "used" {
@@ -119,7 +109,7 @@ in {
     # netcat-openbsd
     # nettools
     # ngrok
-    # nixpkgs-unstable.electron_25
+    # electron_25
     # nix-prefetch-scripts
     # nix-top
     # nmap

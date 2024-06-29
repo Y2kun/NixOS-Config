@@ -2,19 +2,7 @@
   inputs,
   self,
   ...
-}:
-# let
-# nixpkgs-unstable = (import inputs.nixpkgs-unstable) {
-#   config = {
-#     allowUnfree = true;
-#     permittedInsecurePackages = [
-#       "electron-25.9.0"
-#     ];
-#   };
-#   system = "x86_64-linux";
-# };
-# in
-{
+}: {
   flake.nixosModules.common = {pkgs, ...}: {
     i18n = {
       defaultLocale = "de_AT.UTF-8";
@@ -430,8 +418,8 @@
       ncdu # manualy find heavy data
       # networkmanagerapplet # For easily managing the local network
       nil # lsp for nix
-      # nixpkgs-unstable.obsidian # where all my personal notes are
-      # nixpkgs-unstable.signal-desktop # a messenging app
+      # obsidian # where all my personal notes are
+      # signal-desktop # a messenging app
       obsidian
       # openshot-qt # video editor
       pavucontrol # audio manager
