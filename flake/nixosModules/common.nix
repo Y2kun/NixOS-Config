@@ -374,6 +374,7 @@
       # dotnetPackages.Nuget
       waypaper
       waybar-mpris
+      ytdownloader
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
