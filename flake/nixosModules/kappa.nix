@@ -32,12 +32,14 @@
       binfmt.emulatedSystems = ["aarch64-linux"];
     };
 
-    environment.systemPackages = with pkgs; [
-      # r2modman # modloader for some games
-      r2modman
-      # stt
-      # tts
-    ];
+    environment = {
+      systemPackages = with pkgs; [
+        # r2modman # modloader for some games
+        r2modman
+        # stt
+        # tts
+      ];
+    };
 
     # packages i "used" {
     # acpi
