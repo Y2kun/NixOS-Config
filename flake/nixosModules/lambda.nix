@@ -46,11 +46,11 @@
         withOpenASAR = true;
         withVencord = true;
       })
-      wireshark
-      lazydocker
-      docker
-      docker-client
-      docker-compose
+      # wireshark
+      # lazydocker
+      # docker
+      # docker-client
+      # docker-compose
       # logisim-evolution
       # osu-lazer-bin
       protonvpn-gui
