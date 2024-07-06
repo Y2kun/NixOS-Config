@@ -108,6 +108,39 @@
           "$mod, mouse:272, movewindow"
         ];
 
+        workspace = [
+          " 1, monitor:HDMI-A-1"
+          " 2, monitor:HDMI-A-1"
+          " 3, monitor:HDMI-A-1"
+          " 4, monitor:HDMI-A-1"
+          " 5, monitor:HDMI-A-1"
+          " 6, monitor:HDMI-A-1"
+          " 7, monitor:HDMI-A-1"
+          " 8, monitor:HDMI-A-1"
+          " 9, monitor:HDMI-A-1"
+          "10, monitor:HDMI-A-1"
+          "11, monitor:HDMI-A-2"
+          "12, monitor:HDMI-A-2"
+          "13, monitor:HDMI-A-2"
+          "14, monitor:HDMI-A-2"
+          "15, monitor:HDMI-A-2"
+          "16, monitor:HDMI-A-2"
+          "17, monitor:HDMI-A-2"
+          "18, monitor:HDMI-A-2"
+          "19, monitor:HDMI-A-2"
+          "20, monitor:HDMI-A-2"
+          "21, monitor:DP-1"
+          "22, monitor:DP-1"
+          "23, monitor:DP-1"
+          "24, monitor:DP-1"
+          "25, monitor:DP-1"
+          "26, monitor:DP-1"
+          "27, monitor:DP-1"
+          "28, monitor:DP-1"
+          "29, monitor:DP-1"
+          "30, monitor:DP-1"
+        ];
+
         decoration = {
           rounding = 5;
           active_opacity = 1.0;

@@ -9,7 +9,6 @@
       inputMethod = {
         enabled = "fcitx5";
         fcitx5.addons = with pkgs; [fcitx5-configtool fcitx5-anthy];
-        # ibus.panel = "${pkgs.plasma5Packages.plasma-desktop}/lib/libexec/kimpanel-ibus-panel";
       };
 
       extraLocaleSettings = {
@@ -92,20 +91,13 @@
       ];
 
       home = {
-        # packages = with pkgs; [plasma-browser-integration];
         pointerCursor = {
           gtk.enable = true;
           package = pkgs.afterglow-cursors-recolored;
           name = "Afterglow-Cursours-Recolored-Dracula-Cyan";
-          # package = pkgs.bibata-cursors;
-          # name = "Bibata-Modern-Classic";
-          # package = pkgs.phinger-cursors;
-          # name = "Default"; # Doubtfull how this works
           size = 12;
         };
       };
-
-      # services.flameshot.enable = true;
 
       programs = {
         obs-studio = {
@@ -191,8 +183,10 @@
           ];
         };
 
-        starship.enable = true;
-        starship.enableFishIntegration = true;
+        starship = {
+          enable = true;
+          starship.enableFishIntegration = true;
+        };
 
         bat = {
           enable = true;
@@ -202,10 +196,7 @@
           };
         };
 
-        direnv = {
-          enable = true;
-          # enableFishIntegration = true;
-        };
+        direnv.enable = true;
 
         wezterm = {
           enable = true;
@@ -255,8 +246,6 @@
       fwupd.enable = true;
       gnome.at-spi2-core.enable = true;
       gnome.gnome-keyring.enable = true;
-      # flatpak.enable = true;
-      # printing.enable = true;
       radicale.enable = false;
       udisks2.enable = true;
 
@@ -266,38 +255,6 @@
       };
 
       hardware.openrgb.enable = true;
-
-      kmscon = {
-        enable = true;
-        hwRender = true;
-      };
-
-      # desktopManager = {
-      #   plasma6.enable = true;
-      #   plasma5.enable = true;
-      #   plasma6.runUsingSystemd = true;
-      # };
-
-      # displayManager = {
-      #   defaultSession = "plasma";
-      #   defaultSession = "plasmawayland";
-      #   sddm = {
-      #     enable = true;
-      #     wayland.enable = true;
-      #   };
-      # };
-
-      # xserver.displayManager = {
-      #   lightdm = {
-      #     enable = true;
-      #     greeters.mini = {
-      #       enable = true;
-      #       # extraConfig = {
-
-      #       # };
-      #     };
-      #   };
-      # };
 
       xserver.displayManager = {
         gdm = {
@@ -312,23 +269,6 @@
         enableCtrlAltBackspace = true;
         autoRepeatInterval = 20;
         autoRepeatDelay = 150;
-
-        # xkb = {
-        #   layout = "jp, de";
-        #   model = "jp106";
-        #   options = "ctrl:nocap, sgrp:alt_shift_toggle";
-        # "shift:both_capslock_cancel"
-        # "terminate+ctrl_alt_bksp"
-        # "japan:hztg_escape, ctrl:nocaps, grp:alt_shift_toggle"
-
-        # options = __concatStringsSep "," [
-        #   # "shift:both_capslock_cancel"
-        #   # "terminate+ctrl_alt_bksp"
-        #   "japan:hztg_escape"
-        #   "ctrl:nocaps"
-        #   "grp:alt_shift_toggle"
-        # ];
-        # };
       };
     };
 
@@ -337,7 +277,6 @@
       keyMap = "jp106";
     };
 
-    # services.dbus.enable = true;
     xdg.portal = {
       enable = true;
       wlr.enable = true;
@@ -348,14 +287,6 @@
     };
 
     virtualisation.waydroid.enable = true;
-
-    # environment.plasma6.excludePackages = with pkgs.libsForQt5; [
-    #   konsole
-    #   oxygen
-    #   spectacle
-    #   kate
-    #   kwrited
-    # ];
 
     environment.systemPackages = with pkgs; [
       # meson
