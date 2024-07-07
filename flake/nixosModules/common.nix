@@ -185,7 +185,7 @@
 
         starship = {
           enable = true;
-          starship.enableFishIntegration = true;
+          enableFishIntegration = true;
         };
 
         bat = {
@@ -306,6 +306,7 @@
       waypaper
       waybar-mpris
       ytdownloader
+      gvfs
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
@@ -367,7 +368,6 @@
       rubyPackages.solargraph # lsp for ruby
       signal-desktop
       speedtest-rs # Intertet speed test with a few extra infos
-      # starship # give helpful information and looks cool
       swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing
