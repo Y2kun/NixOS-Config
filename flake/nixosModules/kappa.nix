@@ -218,9 +218,10 @@
       '';
 
       wayland.windowManager.hyprland.settings.monitor = [
-        "DP-1    ,preferred,-1080x320,1,transform,1"
-        "HDMI-A-2,preferred,0x0,1,transform,2"
-        "HDMI-A-1,preferred,0x1080,1"
+        # "DP-1    , preferred, -1080x320,1 , transform, 1"
+        # "HDMI-A-2, preferred, 0x0      ,1 , transform, 2"
+        # "HDMI-A-1, preferred, 0x1080   ,1 , transform"
+        "        , preferred, 0x0      ,1 , transform, 1"
       ];
 
       xdg.enable = true;
