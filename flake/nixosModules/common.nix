@@ -345,7 +345,7 @@
       libreoffice # it's libre office
       # lite-xl # editor i used for lobster
       # lutris # Games launcher
-      magic-wormhole # for transfering data
+      # magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
       musikcube # Music player from Command-line
