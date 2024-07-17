@@ -75,6 +75,7 @@
     boot.extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
     '';
+    boot.plymouth.enable = true;
     security.polkit.enable = true;
 
     home-manager.backupFileExtension = "backup";
@@ -256,20 +257,17 @@
 
       hardware.openrgb.enable = true;
 
-      xserver.displayManager = {
-        gdm = {
-          enable = true;
-        };
-      };
+      displayManager.sddm.enable = true;
+      displayManager.sddm.wayland.enable = true;
 
-      xserver = {
-        enable = true;
-        autorun = true;
-        exportConfiguration = true;
-        enableCtrlAltBackspace = true;
-        autoRepeatInterval = 20;
-        autoRepeatDelay = 150;
-      };
+      # xserver = {
+      #   enable = false;
+      #   autorun = true;
+      #   exportConfiguration = true;
+      #   enableCtrlAltBackspace = true;
+      #   autoRepeatInterval = 20;
+      #   autoRepeatDelay = 150;
+      # };
     };
 
     console = {
@@ -281,7 +279,7 @@
       enable = true;
       wlr.enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
+        # xdg-desktop-portal-gtk
         xdg-desktop-portal-hyprland
       ];
     };

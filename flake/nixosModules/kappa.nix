@@ -76,13 +76,13 @@
         };
       };
 
-      xserver = {
-        xrandrHeads = ["DP-0"];
-        videoDrivers = ["nvidia"];
-        serverLayoutSection = ''
-          Option "AIGLX" "true"
-        '';
-      };
+      # xserver = {
+      #   xrandrHeads = ["DP-0"];
+      #   videoDrivers = ["nvidia"];
+      #   serverLayoutSection = ''
+      #     Option "AIGLX" "true"
+      #   '';
+      # };
     };
 
     networking = {
@@ -138,36 +138,21 @@
       cpuFreqGovernor = lib.mkDefault "ondemand";
     };
 
-    xdg = {
-      portal.enable = true;
-      portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    };
-
     hardware = {
       enableRedistributableFirmware = true;
 
       cpu.intel.updateMicrocode = true;
 
-      graphics = {
+      opengl = {
         enable = true;
-        # enable32Bit = true;
-        # extraPackages32 = [pkgs.pkgsi686Linux.libva];
+        driSupport32Bit = true;
+        extraPackages32 = [pkgs.pkgsi686Linux.libva];
       };
 
       nvidia = {
-        modesetting.enable = true;
+        # modesetting.enable = true;
         nvidiaSettings = true;
         # package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-        # prime = {
-        #   sync.enable = true;
-        #   # integrated
-        #   amdgpuBusId = "PCI:6:0:0";
-        #   # intelBusId = "PCI:0:0:0";
-
-        #   # dedicated
-        #   nvidiaBusId = "PCI:4:0:0";
-        # };
       };
 
       bluetooth = {

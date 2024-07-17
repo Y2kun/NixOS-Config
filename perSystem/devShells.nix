@@ -13,10 +13,10 @@ flake: {
       pkgs.mkShell {
         packages = with pkgs; [
           deadnix
-          inputs'.colmena.packages.colmena
-          # just
+          colmena
           statix
           config.treefmt.build.wrapper
+          just
         ];
 
         shellHook = ''

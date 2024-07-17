@@ -26,15 +26,15 @@
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
           touchpad.disable_while_typing = false;
         };
+
         exec-once = [
           # "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
           # "hyprctl setcursor Afterglow-Cursours-Recolored-Dracula-Cyan 16"
           "swww-daemon"
           "systemctl --user restart waybar.service"
-          "[workspace 1 silent] firefox"
-          "[workspace 2 silent] wezterm"
-          "[workspace 9 silent] thunar"
-          "[workspace 10 silent] discordcanary"
+          "[workspace 1 silent] ${pkgs.firefox}/bin/firefox"
+          "[workspace 2 silent] ${pkgs.wezterm}/bin/wezterm"
+          "[workspace 9 silent] ${pkgs.xfce.thunar}/bin/thunar"
         ];
 
         "$mod" = "SUPER";
