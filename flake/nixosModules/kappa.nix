@@ -76,13 +76,17 @@
         };
       };
 
-      # xserver = {
-      #   xrandrHeads = ["DP-0"];
-      #   videoDrivers = ["nvidia"];
-      #   serverLayoutSection = ''
-      #     Option "AIGLX" "true"
-      #   '';
-      # };
+      xserver = {
+        xrandrHeads = ["DP-0"];
+        videoDrivers = ["nvidia"];
+        serverLayoutSection = ''
+          Option "AIGLX" "true"
+        '';
+
+        # You may need to comment out "services.displayManager.gdm.enable = true;"
+        desktopManager.plasma5.enable = true;
+      };
+      displayManager.sddm.enable = true;
     };
 
     networking = {
@@ -150,7 +154,7 @@
       };
 
       nvidia = {
-        # modesetting.enable = true;
+        modesetting.enable = true;
         nvidiaSettings = true;
         # package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
@@ -202,12 +206,15 @@
         keycode 102 = Super_L
       '';
 
-      wayland.windowManager.hyprland.settings.monitor = [
-        # "DP-1    , preferred, -1080x320,auto , transform, 1"
-        # "HDMI-A-2, preferred, 0x0      ,auto , transform, 2"
-        # "HDMI-A-1, preferred, 0x1080   ,auto , transform"
-        "        , preferred, 0x0      ,auto , transform, 2"
-      ];
+      wayland.windowManager.hyprland = {
+        enable = lib.mkForce false;
+        settings.monitor = [
+          # "DP-1    , preferred, -1080x320,auto , transform, 1"
+          # "HDMI-A-2, preferred, 0x0      ,auto , transform, 2"
+          # "HDMI-A-1, preferred, 0x1080   ,auto , transform"
+          "        , preferred, 0x0      ,auto , transform, 2"
+        ];
+      };
 
       xdg.enable = true;
 
@@ -232,6 +239,7 @@
 
       programs = {
         gpg.settings = {keyserver-options = "auto-key-retrieve";};
+        waybar.enable = lib.mkForce false;
       };
     };
   };

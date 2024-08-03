@@ -490,10 +490,10 @@
         enableFishIntegration = true;
       };
 
-      hyprland = {
-        enable = true;
-        xwayland.enable = true;
-      };
+      # hyprland = {
+      #   enable = true;
+      #   xwayland.enable = true;
+      # };
 
       command-not-found.enable = false;
       dconf.enable = true;

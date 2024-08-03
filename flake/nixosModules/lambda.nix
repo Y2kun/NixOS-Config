@@ -28,6 +28,11 @@
       # videoDrivers = ["amdgpu"];
     };
 
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
     users.users.yuma = {
       isNormalUser = true;
       name = "yuma";
