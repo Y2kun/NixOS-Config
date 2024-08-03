@@ -82,10 +82,10 @@
         serverLayoutSection = ''
           Option "AIGLX" "true"
         '';
-
-        # You may need to comment out "services.displayManager.gdm.enable = true;"
-        desktopManager.plasma5.enable = true;
+        displayManager.defaultSession = "plasmax11";
       };
+      # services.displayManager.sddm.wayland.enable = true;
+      desktopManager.plasma6.enable = true;
       displayManager.sddm.enable = true;
     };
 
