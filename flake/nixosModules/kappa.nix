@@ -16,12 +16,12 @@
       fsType = "ext4";
     };
 
-    swapDevices = [
-      {
-        device = "/var/lib/swapfile";
-        size = 16 * 1024;
-      }
-    ];
+    # swapDevices = [
+    #   {
+    #     device = "/var/lib/swapfile";
+    #     size = 16 * 1024;
+    #   }
+    # ];
 
     system.stateVersion = "20.09";
 
@@ -82,11 +82,8 @@
         serverLayoutSection = ''
           Option "AIGLX" "true"
         '';
-        displayManager.defaultSession = "plasmax11";
+        desktopManager.xfce.enable = true;
       };
-      # services.displayManager.sddm.wayland.enable = true;
-      desktopManager.plasma6.enable = true;
-      displayManager.sddm.enable = true;
     };
 
     networking = {
