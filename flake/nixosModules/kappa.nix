@@ -83,6 +83,7 @@
           Option "AIGLX" "true"
         '';
         desktopManager.xfce.enable = true;
+        displayManager.defaultSession = "xfce";
       };
     };
 

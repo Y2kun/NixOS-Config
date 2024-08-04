@@ -138,7 +138,6 @@
 
         lf = {
           # enable = true;
-
           settings = {
             preview = true;
             hidden = true;
@@ -258,16 +257,16 @@
       hardware.openrgb.enable = true;
 
       displayManager.sddm.enable = true;
-      displayManager.sddm.wayland.enable = true;
+      # displayManager.sddm.wayland.enable = true;
 
-      # xserver = {
-      #   enable = false;
-      #   autorun = true;
-      #   exportConfiguration = true;
-      #   enableCtrlAltBackspace = true;
-      #   autoRepeatInterval = 20;
-      #   autoRepeatDelay = 150;
-      # };
+      xserver = {
+        enable = true;
+        autorun = true;
+        # exportConfiguration = true;
+        # enableCtrlAltBackspace = true;
+        # autoRepeatInterval = 20;
+        # autoRepeatDelay = 150;
+      };
     };
 
     console = {
