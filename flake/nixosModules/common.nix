@@ -304,6 +304,7 @@
       waybar-mpris
       ytdownloader
       gvfs
+      javaPackages.openjfx22
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
