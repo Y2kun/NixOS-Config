@@ -305,6 +305,7 @@
       ytdownloader
       gvfs
       javaPackages.openjfx22
+      jdk
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
