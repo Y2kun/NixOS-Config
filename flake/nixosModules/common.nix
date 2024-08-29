@@ -85,6 +85,7 @@
         self.nixosModules.dunst
         self.nixosModules.fastfetch
         self.nixosModules.helix
+        self.nixosModules.neovim
         self.nixosModules.hyprland
         self.nixosModules.hyprlock
         self.nixosModules.waybar
