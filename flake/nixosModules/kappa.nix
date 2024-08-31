@@ -93,9 +93,9 @@ in {
         serverLayoutSection = ''
           Option "AIGLX" "true"
         '';
-        desktopManager.xfce.enable = true;
-        displayManager.defaultSession = "xfce";
       };
+      desktopManager.xfce.enable = true;
+      displayManager.defaultSession = "xfce";
     };
 
     networking = {
@@ -208,8 +208,6 @@ in {
     # FIXME: Ugly hack to make home-manager obey??
     systemd.services.home-manager-yuma.environment.HOME = "/home/yuma";
 
-    home-manager.verbose = false;
-
     home-manager.users.yuma = _: {
       home.file.".Xmodmap".text = ''
         keycode 102 = Super_L
@@ -227,23 +225,25 @@ in {
 
       xdg.enable = true;
 
-      home.stateVersion = "20.09";
-      home.homeDirectory = lib.mkForce "/home/yuma";
-      home.username = "yuma";
+      home = {
+        stateVersion = "20.09";
+        homeDirectory = lib.mkForce "/home/yuma";
+        username = "yuma";
 
-      home.sessionVariables = {
-        BROWSER = "firefox";
-        LC_CTYPE = "en_US.UTF-8";
-        PAGER = "less -R";
+        sessionVariables = {
+          BROWSER = "firefox";
+          LC_CTYPE = "en_US.UTF-8";
+          PAGER = "less -R";
 
-        GTK_IM_MODULE = "fcitx";
-        QT_IM_MODULE = "fcitx";
-        XMODIFIER = "@im=fcitx";
-        XMODIFIERS = "@im=fcitx";
+          GTK_IM_MODULE = "fcitx";
+          QT_IM_MODULE = "fcitx";
+          XMODIFIER = "@im=fcitx";
+          XMODIFIERS = "@im=fcitx";
 
-        RIPGREP_CONFIG_PATH = builtins.toFile "ripgreprc" ''
-          --smart-case
-        '';
+          RIPGREP_CONFIG_PATH = builtins.toFile "ripgreprc" ''
+            --smart-case
+          '';
+        };
       };
 
       programs = {

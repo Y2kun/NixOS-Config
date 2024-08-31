@@ -13,11 +13,6 @@
 
     system.stateVersion = "22.05";
 
-    networking = {
-      hostName = "lambda";
-      networkmanager.enable = true;
-    };
-
     services = {
       avahi.enable = true;
 
@@ -67,50 +62,52 @@
     ];
 
     home-manager.users.yuma = _: {
-      home.username = "yuma";
-      home.homeDirectory = "/home/yuma";
-      home.stateVersion = "23.05";
+      home = {
+        username = "yuma";
+        homeDirectory = "/home/yuma";
+        stateVersion = "23.05";
+      };
       wayland.windowManager.hyprland.settings.monitor = [
         "eDP-1, prefered, auto, 1"
       ];
     };
 
-    # Enable TLP (better than gnomes internal power manager)
-    services.tlp = {
-      enable = true;
-      settings = {
-        CPU_BOOST_ON_AC = 1;
-        CPU_BOOST_ON_BAT = 0;
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    services = {
+      # Enable TLP (better than gnomes internal power manager)
+      tlp = {
+        enable = true;
+        settings = {
+          CPU_BOOST_ON_AC = 1;
+          CPU_BOOST_ON_BAT = 0;
+          CPU_SCALING_GOVERNOR_ON_AC = "performance";
+          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        };
       };
+      # Disable GNOMEs power management
+      power-profiles-daemon.enable = false;
+      # Enable thermald (only necessary if on Intel CPUs)
+      thermald.enable = true;
     };
-
-    # Disable GNOMEs power management
-    services.power-profiles-daemon.enable = false;
 
     # Enable powertop
     powerManagement.powertop.enable = true;
 
-    # Enable thermald (only necessary if on Intel CPUs)
-    services.thermald.enable = true;
-
     systemd.services.home-manager-yuma.environment.HOME = "/home/yuma";
-
-    home-manager.verbose = false;
 
     virtualisation.kvmgt.enable = true;
     virtualisation.libvirtd.enable = true;
 
     # Bootloader.
     boot = {
-      loader.systemd-boot.enable = true;
-      loader.efi.canTouchEfiVariables = true;
-      loader.efi.efiSysMountPoint = "/boot/efi";
+      loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+        efi.efiSysMountPoint = "/boot/efi";
+      };
       initrd.availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
       initrd.kernelModules = [];
-      kernelModules = ["kvm-amd"];
       extraModulePackages = [];
+      kernelModules = ["kvm-amd"];
     };
 
     fileSystems = {
@@ -133,9 +130,14 @@
     # (the default) this is the recommended approach. When using systemd-networkd it's
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-    networking.useDHCP = lib.mkDefault true;
-    # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
-    # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+    networking = {
+      useDHCP = lib.mkDefault true;
+      # interfaces.enp2s0.useDHCP = lib.mkDefault true;
+      # interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+
+      hostName = name;
+      networkmanager.enable = true;
+    };
 
     hardware = {
       cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

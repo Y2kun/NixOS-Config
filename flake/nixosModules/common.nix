@@ -78,8 +78,8 @@
       '';
       plymouth.enable = true;
     };
-    security.polkit.enable = true;
 
+    home-manager.verbose = false;
     home-manager.backupFileExtension = "backup";
     home-manager.users.yuma = _: {
       imports = [
@@ -270,6 +270,15 @@
         # enableCtrlAltBackspace = true;
         # autoRepeatInterval = 20;
         # autoRepeatDelay = 150;
+      };
+
+      pipewire = {
+        enable = true;
+        socketActivation = true;
+        wireplumber.enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
       };
     };
 
@@ -505,21 +514,14 @@
       # };
     };
 
-    swapDevices = [];
+    # swapDevices = [];
     environment.homeBinInPath = true;
     nixpkgs.config.allowUnfree = true;
 
     # Sound
     sound.enable = true;
     security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      socketActivation = true;
-      wireplumber.enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
+    security.polkit.enable = true;
 
     documentation.dev.enable = true;
 
