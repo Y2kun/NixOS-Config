@@ -227,10 +227,10 @@
 
     stylix = {
       autoEnable = true;
-      stylix.image = "/home/yuma/wallpaper/blue-black-hole.png";
+      image = "/home/yuma/wallpaper/blue-black-hole.png";
       polarity = "dark";
-      base16Scheme = {
-      };
+      # base16Scheme = {
+      # };
 
       # fonts = {
       #   serif = {
