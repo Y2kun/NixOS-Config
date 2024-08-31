@@ -1,7 +1,7 @@
 {
   inputs,
   config,
-  lib,
+  # lib,
   ...
 }: let
   mkHost = name: {

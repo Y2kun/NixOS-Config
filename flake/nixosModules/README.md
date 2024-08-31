@@ -1,4 +1,4 @@
 # Devices
-Common= Config that all my Devices share
-Kappa = My Desktop Device
-Lambda= My Laptop
+common = Configuration that all my devices share
+kappa  = My Desktop PC
+lambda = My Laptop
