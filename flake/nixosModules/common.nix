@@ -94,14 +94,7 @@
         self.nixosModules.wofi
       ];
 
-      home = {
-        pointerCursor = {
-          gtk.enable = true;
-          package = pkgs.afterglow-cursors-recolored;
-          name = "Afterglow-Cursours-Recolored-Dracula-Cyan";
-          size = 12;
-        };
-      };
+      stylix.targets.xyz.enable = false;
 
       programs = {
         obs-studio = {
@@ -230,13 +223,47 @@
           '';
         };
       };
+    };
 
-      gtk = {
-        enable = true;
-        theme = {
-          name = "Breeze-Dark";
-          package = pkgs.libsForQt5.breeze-gtk;
-        };
+    stylix = {
+      autoEnable = true;
+      stylix.image = "/home/yuma/wallpaper/blue-black-hole.png";
+      polarity = "dark";
+      base16Scheme = {
+      };
+
+      # fonts = {
+      #   serif = {
+      #     package = pkgs.dejavu_fonts;
+      #     name = "DejaVu Serif";
+      #   };
+
+      #   sansSerif = {
+      #     package = pkgs.dejavu_fonts;
+      #     name = "DejaVu Sans";
+      #   };
+
+      #   monospace = {
+      #     package = pkgs.dejavu_fonts;
+      #     name = "DejaVu Sans Mono";
+      #   };
+
+      #   emoji = {
+      #     package = pkgs.noto-fonts-emoji;
+      #     name = "Noto Color Emoji";
+      #   };
+      # };
+      cursor = {
+        package = pkgs.afterglow-cursors-recolored;
+        name = "Afterglow-Cursors-Recolored-Dracula-Cyan";
+        size = 32;
+      };
+
+      opacity = {
+        applications = 1.0;
+        desktop = 1.0;
+        popups = 1.0;
+        terminal = 0.9;
       };
     };
 
