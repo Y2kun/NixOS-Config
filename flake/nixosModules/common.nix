@@ -71,11 +71,13 @@
       NetworkManager-wait-online.enable = false;
     };
 
-    boot.extraModulePackages = [pkgs.linuxPackages.v4l2loopback];
-    boot.extraModprobeConfig = ''
-      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    '';
-    boot.plymouth.enable = true;
+    boot = {
+      extraModulePackages = [pkgs.linuxPackages.v4l2loopback];
+      extraModprobeConfig = ''
+        options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+      '';
+      plymouth.enable = true;
+    };
     security.polkit.enable = true;
 
     home-manager.backupFileExtension = "backup";
@@ -245,20 +247,21 @@
       devmon.enable = true;
       fstrim.enable = true;
       fwupd.enable = true;
-      gnome.at-spi2-core.enable = true;
-      gnome.gnome-keyring.enable = true;
+      gnome = {
+        at-spi2-core.enable = true;
+        gnome-keyring.enable = true;
+      };
       radicale.enable = false;
       udisks2.enable = true;
+
+      hardware.openrgb.enable = true;
+      displayManager.sddm.enable = true;
+      # displayManager.sddm.wayland.enable = true;
 
       openssh = {
         enable = true;
         settings.PasswordAuthentication = false;
       };
-
-      hardware.openrgb.enable = true;
-
-      displayManager.sddm.enable = true;
-      # displayManager.sddm.wayland.enable = true;
 
       xserver = {
         enable = true;
@@ -481,6 +484,10 @@
     };
 
     programs = {
+      command-not-found.enable = false;
+      dconf.enable = true;
+      nm-applet.enable = true;
+
       steam = {
         enable = true;
         remotePlay.openFirewall = true;
@@ -496,10 +503,6 @@
       #   enable = true;
       #   xwayland.enable = true;
       # };
-
-      command-not-found.enable = false;
-      dconf.enable = true;
-      nm-applet.enable = true;
     };
 
     swapDevices = [];
