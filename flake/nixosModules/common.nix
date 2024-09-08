@@ -335,7 +335,7 @@
       gwenview # Imageviewer
       okular # PDF and MD viewer
       dolphin
-      hugo
+      # hugo
       # pomodoro
       thunderbird
       ardour
@@ -353,7 +353,7 @@
 
       alejandra # formats nix files
       # amberol # for playing single tracks. usefull for testing
-      # anki # learning cards maker and manager for learning
+      anki # learning cards maker and manager for learning
       aseprite # pixel art editor
       audacity # for editing audio
       bat # returns file content like cat, looks better

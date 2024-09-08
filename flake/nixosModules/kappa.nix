@@ -93,9 +93,9 @@ in {
         serverLayoutSection = ''
           Option "AIGLX" "true"
         '';
+        desktopManager.xfce.enable = true;
+        displayManager.defaultSession = "xfce";
       };
-      desktopManager.xfce.enable = true;
-      displayManager.defaultSession = "xfce";
     };
 
     networking = {
