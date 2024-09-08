@@ -25,48 +25,48 @@
         gtk_dark = true;
       };
 
-      style = ''
-        * {
-          font-family: JetBrainsMono;
-          color: #e5e9f0;
-          background: transparent;
-        }
+      # style = ''
+      #   * {
+      #     font-family: JetBrainsMono;
+      #     color: #e5e9f0;
+      #     background: transparent;
+      #   }
 
-        #window {
-          background: #111111;
-          margin: auto;
-          padding: 10x;
-          border-radius: 5px;
-          border: 3px solid #00f4cc;
-        }
+      #   #window {
+      #     background: #111111;
+      #     margin: auto;
+      #     padding: 10x;
+      #     border-radius: 5px;
+      #     border: 3px solid #00f4cc;
+      #   }
 
-        #input {
-          padding: 10px;
-          margin-bottom: 10px;
-          border-radius: 15px;
-        }
+      #   #input {
+      #     padding: 10px;
+      #     margin-bottom: 10px;
+      #     border-radius: 15px;
+      #   }
 
-        #outer-box {
-          padding: 20px;
-        }
+      #   #outer-box {
+      #     padding: 20px;
+      #   }
 
-        #img {
-          margin-right: 6px;
-        }
+      #   #img {
+      #     margin-right: 6px;
+      #   }
 
-        #entry {
-          padding: 10px;
-          border-radius: 15px;
-        }
+      #   #entry {
+      #     padding: 10px;
+      #     border-radius: 15px;
+      #   }
 
-        #entry:selected {
-          background-color: #00725f;
-        }
+      #   #entry:selected {
+      #     background-color: #00725f;
+      #   }
 
-        #text {
-          margin: 2px;
-        }
-      '';
+      #   #text {
+      #     margin: 2px;
+      #   }
+      # '';
     };
   };
 }

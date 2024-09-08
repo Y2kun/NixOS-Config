@@ -16,8 +16,8 @@
           border_size = 3;
           gaps_in = 8;
           gaps_out = 8;
-          "col.inactive_border" = "rgba(00725fff)";
-          "col.active_border" = "rgba(00f4ccff) rgba(28fcd9ff) 45deg";
+          # "col.inactive_border" = "rgba(00725fff)";
+          # "col.active_border" = "rgba(00f4ccff) rgba(28fcd9ff) 45deg";
           resize_on_border = true;
         };
 
@@ -149,7 +149,7 @@
           drop_shadow = true;
           shadow_range = 4;
 
-          "col.shadow" = "rgba(000000f0)";
+          # "col.shadow" = "rgba(000000f0)";
           shadow_offset = "0 5";
           blur = {
             special = true;

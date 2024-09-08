@@ -11,7 +11,7 @@
       inputs.home-manager.nixosModules.home-manager
       config.flake.nixosModules.common
       config.flake.nixosModules.${name}
-      inputs.stylix.nixosModules.stylix
+      # inputs.stylix.nixosModules.stylix
     ];
   };
 in {

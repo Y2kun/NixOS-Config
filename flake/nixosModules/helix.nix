@@ -9,7 +9,6 @@
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = "tokyonight_transparent";
         editor = {
           auto-completion = true;
           auto-format = true;
@@ -43,13 +42,6 @@
 
         keys.normal = {
           esc = ["collapse_selection" "keep_primary_selection"];
-        };
-      };
-
-      themes = {
-        tokyonight_transparent = {
-          "inherits" = "tokyonight";
-          "ui.background" = {};
         };
       };
 

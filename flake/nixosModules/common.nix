@@ -92,9 +92,93 @@
         self.nixosModules.hyprlock
         self.nixosModules.waybar
         self.nixosModules.wofi
+        inputs.stylix.homeManagerModules.stylix
       ];
 
-      stylix.targets.xyz.enable = false;
+      stylix = {
+        enable = true;
+        autoEnable = true;
+        image = ./wallpapers/blue-black-hole.png;
+        polarity = "dark";
+
+        base16Scheme = {
+          # chilly - by Y2kun
+          base00 = "030e0f";
+          base01 = "051a1e";
+          base02 = "0b2e33";
+          base03 = "124047";
+          base04 = "1b525a";
+          base05 = "25636d";
+          base06 = "30747f";
+          base07 = "3d848f";
+          base08 = "4c949f";
+          base09 = "c47d73";
+          base0A = "a49356";
+          base0B = "7aa75c";
+          base0C = "5daf81";
+          base0D = "5fa5b0";
+          base0E = "7e90cd";
+          base0F = "a97bc7";
+        };
+
+        # base16Scheme = { # icy
+        #   base00 = "021012";
+        #   base01 = "031619";
+        #   base02 = "041f23";
+        #   base03 = "052e34";
+        #   base04 = "064048";
+        #   base05 = "095b67";
+        #   base06 = "0c7c8c";
+        #   base07 = "109cb0";
+        #   base08 = "16c1d9";
+        #   base09 = "b3ebf2";
+        #   base0A = "80deea";
+        #   base0B = "4dd0e1";
+        #   base0C = "26c6da";
+        #   base0D = "00bcd4";
+        #   base0E = "00acc1";
+        #   base0F = "0097a7";
+        # };
+
+        # fonts = {
+        #   serif = {
+        #     package = pkgs.dejavu_fonts;
+        #     name = "DejaVu Serif";
+        #   };
+
+        #   sansSerif = {
+        #     package = pkgs.dejavu_fonts;
+        #     name = "DejaVu Sans";
+        #   };
+
+        #   monospace = {
+        #     package = pkgs.dejavu_fonts;
+        #     name = "DejaVu Sans Mono";
+        #   };
+
+        #   emoji = {
+        #     package = pkgs.noto-fonts-emoji;
+        #     name = "Noto Color Emoji";
+        #   };
+        # };
+
+        cursor = {
+          # package = pkgs.afterglow-cursors-recolored;
+          # name = "Afterglow-Cursors-Recolored-Dracula-Cyan";
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Ice";
+          size = 22;
+        };
+
+        opacity = {
+          # applications = 1.0;
+          # desktop = 1.0;
+          # popups = 1.0;
+          terminal = 0.9;
+        };
+      };
+
+      # stylix.targets.firefox.enable = true;
 
       programs = {
         obs-studio = {
@@ -188,7 +272,7 @@
           enable = true;
           config = {
             pager = "less -FR";
-            theme = "TwoDark";
+            # theme = "TwoDark";
           };
         };
 
@@ -217,53 +301,10 @@
                     size = {Percent = 50},
                   }
                 },
-
               }
             }
           '';
         };
-      };
-    };
-
-    stylix = {
-      autoEnable = true;
-      image = "/home/yuma/wallpaper/blue-black-hole.png";
-      polarity = "dark";
-      # base16Scheme = {
-      # };
-
-      # fonts = {
-      #   serif = {
-      #     package = pkgs.dejavu_fonts;
-      #     name = "DejaVu Serif";
-      #   };
-
-      #   sansSerif = {
-      #     package = pkgs.dejavu_fonts;
-      #     name = "DejaVu Sans";
-      #   };
-
-      #   monospace = {
-      #     package = pkgs.dejavu_fonts;
-      #     name = "DejaVu Sans Mono";
-      #   };
-
-      #   emoji = {
-      #     package = pkgs.noto-fonts-emoji;
-      #     name = "Noto Color Emoji";
-      #   };
-      # };
-      cursor = {
-        package = pkgs.afterglow-cursors-recolored;
-        name = "Afterglow-Cursors-Recolored-Dracula-Cyan";
-        size = 32;
-      };
-
-      opacity = {
-        applications = 1.0;
-        desktop = 1.0;
-        popups = 1.0;
-        terminal = 0.9;
       };
     };
 

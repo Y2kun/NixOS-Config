@@ -21,21 +21,20 @@
           transparency = 8;
           corner_radius = 5;
           frame_width = 3;
-          font = "Fira";
         };
 
-        urgency_normal = {
-          foreground = "#ffffff";
-          background = "#003020";
-          frame_color = "#00f4cc";
-          timeout = 5;
-        };
-        urgency_critical = {
-          foreground = "#ffffff";
-          background = "#aa3020";
-          frame_color = "#ff040c";
-          timeout = 5;
-        };
+        # urgency_normal = {
+        #   foreground = "#ffffff";
+        #   background = "#003020";
+        #   frame_color = "#00f4cc";
+        #   timeout = 5;
+        # };
+        # urgency_critical = {
+        #   foreground = "#ffffff";
+        #   background = "#aa3020";
+        #   frame_color = "#ff040c";
+        #   timeout = 5;
+        # };
       };
     };
   };
