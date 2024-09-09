@@ -381,7 +381,7 @@
       thunderbird
       ardour
       # dotnetPackages.Nuget
-      waypaper
+      # waypaper
       waybar-mpris
       ytdownloader
       gvfs

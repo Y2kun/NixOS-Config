@@ -1,4 +1,14 @@
-{
+{inputs, ...}: let
+  unstable = (import inputs.nixpkgs-unstable) {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
+    system = "x86_64-linux";
+  };
+in {
   flake.nixosModules.lambda = {
     name,
     config,
@@ -52,13 +62,15 @@
       # docker-client
       # docker-compose
       # logisim-evolution
-      # osu-lazer-bin
+      unstable.osu-lazer-bin
       protonvpn-gui
       qemu
       teams-for-linux
       # virtualbox
       virt-manager
       wine
+      jetbrains.goland
+      jetbrains.idea-ultimate
     ];
 
     home-manager.users.yuma = _: {
