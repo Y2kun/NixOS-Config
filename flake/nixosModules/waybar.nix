@@ -10,7 +10,6 @@
       systemd.enable = true;
       style = ''
         * {
-          background: transparent;
           font-family: Fira;
           font-size: 14px;
           padding: 1px;

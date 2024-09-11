@@ -2,7 +2,18 @@
   inputs,
   self,
   ...
-}: {
+}: let
+  unstable = (import inputs.nixpkgs-unstable) {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+        "electron_30-bin"
+      ];
+    };
+    system = "x86_64-linux";
+  };
+in {
   flake.nixosModules.common = {pkgs, ...}: {
     i18n = {
       defaultLocale = "de_AT.UTF-8";
@@ -383,10 +394,11 @@
       # dotnetPackages.Nuget
       # waypaper
       waybar-mpris
-      ytdownloader
+      # ytdownloader
       gvfs
       javaPackages.openjfx22
       jdk
+      unstable.osu-lazer-bin
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
