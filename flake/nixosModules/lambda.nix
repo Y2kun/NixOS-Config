@@ -43,7 +43,7 @@
     environment.systemPackages = with pkgs; [
       armcord
       (discord-canary.override {
-        withOpenASAR = true;
+        # withOpenASAR = true;
         withVencord = true;
       })
       # wireshark
