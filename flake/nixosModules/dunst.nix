@@ -13,7 +13,7 @@
           width = 300;
           height = 300;
           notification_limit = 10;
-          offset = "5x10";
+          offset = "7x8";
           progress_bar = true;
           progress_bar_height = 10;
           progress_bar_frame_width = 1;
