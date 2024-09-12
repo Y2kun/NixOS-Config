@@ -397,7 +397,7 @@ in {
       # ytdownloader
       gvfs
       javaPackages.openjfx22
-      jdk
+      unstable.jdk22
       unstable.osu-lazer-bin
 
       (chromium.override {
