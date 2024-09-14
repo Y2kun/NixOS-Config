@@ -349,6 +349,7 @@ in {
         # enableCtrlAltBackspace = true;
         # autoRepeatInterval = 20;
         # autoRepeatDelay = 150;
+        wacom.enable = true;
       };
 
       pipewire = {

@@ -42,10 +42,12 @@
 
     environment.systemPackages = with pkgs; [
       armcord
-      (discord-canary.override {
+
+      (unstable.discord-canary.override {
         # withOpenASAR = true;
         withVencord = true;
       })
+
       # wireshark
       # lazydocker
       # docker
