@@ -489,6 +489,7 @@ in {
 
     hardware = {
       steam-hardware.enable = true;
+      opentabletdriver.enable = true;
     };
 
     environment.variables = {
