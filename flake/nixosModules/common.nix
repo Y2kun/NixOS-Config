@@ -215,6 +215,10 @@ in {
           };
         };
 
+        zellij = {
+          enableFishIntegration = true;
+        };
+
         wlogout = {
           enable = true;
         };
@@ -298,10 +302,9 @@ in {
               font_size = 14.0,
               -- color_scheme = "Seti (Gogh)",
               -- color_scheme = "Atelier Plateau (base16)",
-              color_scheme = "Argonaut",
+              -- color_scheme = "Argonaut",
               -- enable_wayland = true,
               enable_wayland = false,
-              window_background_opacity = 0.9,
               hide_tab_bar_if_only_one_tab = true,
               keys = {
                 {
@@ -483,7 +486,6 @@ in {
       xdotool # automate inputs
       xfce.thunar # gui file manager from xfce
       xfce.xfconf # for thunar to remember config
-      zellij # Terminal Partitioner
       zip # zips something
     ];
 

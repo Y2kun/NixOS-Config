@@ -33,8 +33,9 @@
           "swww-daemon"
           "systemctl --user restart waybar.service"
           "[workspace 1 silent] ${pkgs.firefox}/bin/firefox"
-          "[workspace 2 silent] ${pkgs.wezterm}/bin/wezterm"
+          "[workspace 2 silent] ${pkgs.wezterm}/bin/wezterm start zellij"
           "[workspace 9 silent] ${pkgs.xfce.thunar}/bin/thunar"
+          # "[workspace 10 silent] ${pkgs.discord-canary}/bin/discord-canary"
         ];
 
         "$mod" = "SUPER";
