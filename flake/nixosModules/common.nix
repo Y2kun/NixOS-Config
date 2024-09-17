@@ -400,6 +400,7 @@ in {
       waybar-mpris
       # ytdownloader
       gvfs
+      go
       javaPackages.openjfx22
       unstable.jdk22
       unstable.osu-lazer-bin
