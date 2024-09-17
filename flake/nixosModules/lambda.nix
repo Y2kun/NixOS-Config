@@ -43,7 +43,7 @@
     environment.systemPackages = with pkgs; [
       armcord
 
-      (unstable.discord-canary.override {
+      (discord-canary.override {
         # withOpenASAR = true;
         withVencord = true;
       })
