@@ -438,7 +438,7 @@ in {
       inkscape # vectorgraphic editor
       # itch # many free games
       # jq # Json formater
-      krita # In some ways better than gimp
+      unstable.krita # In some ways better than gimp
       libreoffice # it's libre office
       # lite-xl # editor i used for lobster
       # lutris # Games launcher

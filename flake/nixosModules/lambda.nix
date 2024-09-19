@@ -64,6 +64,7 @@
       jetbrains.goland
       jetbrains.idea-ultimate
       scenebuilder
+      ciscoPacketTracer8
     ];
 
     home-manager.users.yuma = _: {
