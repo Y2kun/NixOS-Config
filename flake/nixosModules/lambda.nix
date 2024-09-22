@@ -41,7 +41,8 @@
     };
 
     environment.systemPackages = with pkgs; [
-      armcord
+      # armcord
+      bluez
 
       (discord-canary.override {
         # withOpenASAR = true;
@@ -93,6 +94,8 @@
       power-profiles-daemon.enable = false;
       # Enable thermald (only necessary if on Intel CPUs)
       thermald.enable = true;
+
+      blueman.enable = true;
     };
 
     # Enable powertop
