@@ -246,6 +246,9 @@ in {
         fish = {
           enable = true;
           shellAliases = {
+            "nixos-apply" = "sudo colmena apply-local";
+            "nixos-upgrade" = "nix flake lock --update-input nixpkgs";
+            "gc" = "sudo nix-collect-garbage --delete-old";
             # "ls" = "ls -ach";
             "ls" = "eza";
             "eza" = "eza -a --icons";
@@ -255,9 +258,6 @@ in {
             "tm" = "tmatrix -s 17";
             "clock" = "tty-clock -sc";
             "draw" = "wezterm imgcat";
-            "nixos-apply" = "sudo colmena apply-local";
-            "gc" = "sudo nix-collect-garbage --delete-old";
-            "nixos-upgrade" = "nix flake lock --update-input nixpkgs";
           };
 
           interactiveShellInit = ''
@@ -306,6 +306,7 @@ in {
               -- enable_wayland = true,
               enable_wayland = false,
               hide_tab_bar_if_only_one_tab = true,
+              default_prog = { 'zellij', '-l', 'welcome' }
               keys = {
                 {
                   key = "v",

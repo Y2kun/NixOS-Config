@@ -37,7 +37,6 @@
       description = "Yuma Fellinger";
       extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video"];
       hashedPassword = "$y$j9T$oNlXtRUJQNJDNQmHXPWxk1$Y0i0NUdvHVgJA3jVKCGSTO3B3ecZyX5n2ss.v.PoZE7";
-      shell = "${pkgs.fish}/bin/fish";
     };
 
     environment.systemPackages = with pkgs; [
