@@ -159,6 +159,10 @@
         # integrated
         amdgpuBusId = "PCI:7:0:0";
       };
+      bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+      };
     };
   };
 }
