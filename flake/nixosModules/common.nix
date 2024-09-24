@@ -215,9 +215,12 @@ in {
           };
         };
 
-        zellij = {
-          enableFishIntegration = true;
-        };
+        # zellij = {
+        #   enableFishIntegration = true;
+        #   settings = {
+        #     default_shell = "fish";
+        #   };
+        # };
 
         wlogout = {
           enable = true;
@@ -306,7 +309,8 @@ in {
               -- enable_wayland = true,
               enable_wayland = false,
               hide_tab_bar_if_only_one_tab = true,
-              default_prog = { 'zellij', '-l', 'welcome' }
+              -- enable_tab_bar = false,
+              default_prog = { 'zellij', '-l', 'welcome' },
               keys = {
                 {
                   key = "v",
@@ -405,6 +409,7 @@ in {
       javaPackages.openjfx22
       unstable.jdk22
       unstable.osu-lazer-bin
+      zellij
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
