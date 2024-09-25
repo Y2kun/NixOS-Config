@@ -215,12 +215,13 @@ in {
           };
         };
 
-        # zellij = {
-        #   enableFishIntegration = true;
-        #   settings = {
-        #     default_shell = "fish";
-        #   };
-        # };
+        zellij = {
+          enable = true;
+          enableFishIntegration = true;
+          settings = {
+            default_shell = "fish";
+          };
+        };
 
         wlogout = {
           enable = true;
@@ -409,7 +410,6 @@ in {
       javaPackages.openjfx22
       unstable.jdk22
       unstable.osu-lazer-bin
-      zellij
 
       (chromium.override {
         commandLineArgs = "--load-media-component-extension=1";
