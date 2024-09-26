@@ -32,7 +32,7 @@
         # Profilepicture
         image = {
           monitor = "";
-          path = "/home/yuma/wallpaper/Profilepicture/Profilepicture.webp";
+          path = "/home/yuma/wallpaper/Profilepicture/PFP.png";
           size = 250;
           rounding = 75;
           border_size = 4;
