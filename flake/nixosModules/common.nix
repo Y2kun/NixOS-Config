@@ -392,7 +392,6 @@ in {
       # wayland-protocol
       superfile
       exiftool
-      wlroots
       ani-cli # Animeviewer
       # syncplay # for ani-cli watching with others
       ark # ZIP-Viewer
@@ -405,7 +404,7 @@ in {
       ardour
       # dotnetPackages.Nuget
       # waypaper
-      waybar-mpris
+      # waybar-mpris
       # ytdownloader
       gvfs
       go
@@ -439,7 +438,7 @@ in {
       fzf # fuzzy file finder
       # gimp # Opensource Photoshop
       gitui # similar to github but from terminal
-      glow # for looking at markdown text
+      # glow # for looking at markdown text
       godot_4 # a gameengine
       grimblast # For taking screenshots that go into the clipboard
       # htop # performance
@@ -447,7 +446,7 @@ in {
       # itch # many free games
       # jq # Json formater
       unstable.krita # In some ways better than gimp
-      libreoffice # it's libre office
+      # libreoffice # it's libre office
       # lite-xl # editor i used for lobster
       # lutris # Games launcher
       # magic-wormhole # for transfering data
