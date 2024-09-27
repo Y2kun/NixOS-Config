@@ -41,8 +41,6 @@
 
     environment.systemPackages = with pkgs; [
       # armcord
-      bluez
-
       (discord-canary.override {
         # withOpenASAR = true;
         withVencord = true;
@@ -93,8 +91,6 @@
       power-profiles-daemon.enable = false;
       # Enable thermald (only necessary if on Intel CPUs)
       thermald.enable = true;
-
-      blueman.enable = true;
     };
 
     # Enable powertop
@@ -157,10 +153,6 @@
 
         # integrated
         amdgpuBusId = "PCI:7:0:0";
-      };
-      bluetooth = {
-        enable = true;
-        powerOnBoot = true;
       };
     };
   };

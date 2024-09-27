@@ -156,11 +156,6 @@
         nvidiaSettings = true;
         # package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
-
-      bluetooth = {
-        enable = true;
-        package = pkgs.bluez;
-      };
     };
 
     security = {

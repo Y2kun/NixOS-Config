@@ -501,6 +501,15 @@ in {
     hardware = {
       steam-hardware.enable = true;
       opentabletdriver.enable = true;
+      bluetooth = {
+        enable = true;
+        package = pkgs.bluez;
+        powerOnBoot = true;
+      };
+    };
+
+    services = {
+      blueman.enable = true;
     };
 
     environment.variables = {
