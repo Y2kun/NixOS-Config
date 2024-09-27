@@ -390,6 +390,8 @@ in {
     environment.systemPackages = with pkgs; [
       # meson
       # wayland-protocol
+      superfile
+      exiftool
       wlroots
       ani-cli # Animeviewer
       # syncplay # for ani-cli watching with others
