@@ -113,23 +113,24 @@ in {
         polarity = "dark";
 
         base16Scheme = {
-          # chilly - by Y2kun
-          base00 = "030e0f";
-          base01 = "051a1e";
-          base02 = "0b2e33";
+          # scheme = "chilly";
+          # author = "Y2kun";
+          base00 = "050F0f";
+          base01 = "052c2f";
+          base02 = "0b2f35";
           base03 = "124047";
           base04 = "1b525a";
-          base05 = "25636d";
-          base06 = "30747f";
+          base05 = "25636f";
+          base06 = "30748f";
           base07 = "3d848f";
-          base08 = "4c949f";
-          base09 = "c47d73";
+          base08 = "4ca5af";
+          base09 = "c47d80";
           base0A = "a49356";
           base0B = "7aa75c";
-          base0C = "5daf81";
-          base0D = "5fa5b0";
-          base0E = "7e90cd";
-          base0F = "a97bc7";
+          base0C = "5daf80";
+          base0D = "5fa5bb";
+          base0E = "7e90dd";
+          base0F = "a97bdf";
         };
 
         # base16Scheme = { # icy
@@ -387,7 +388,13 @@ in {
 
     virtualisation.waydroid.enable = true;
 
+    programs.java = {
+      enable = true;
+      package = pkgs.jdk22.override {enableJavaFX = true;};
+    };
+
     environment.systemPackages = with pkgs; [
+      libGL
       # meson
       # wayland-protocol
       superfile
@@ -408,8 +415,6 @@ in {
       # ytdownloader
       gvfs
       go
-      javaPackages.openjfx22
-      unstable.jdk22
       unstable.osu-lazer-bin
 
       (chromium.override {
@@ -448,7 +453,8 @@ in {
       unstable.krita # In some ways better than gimp
       # libreoffice # it's libre office
       # lite-xl # editor i used for lobster
-      # lutris # Games launcher
+      lutris # Games launcher
+      winetricks
       # magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
