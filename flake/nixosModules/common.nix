@@ -112,45 +112,47 @@ in {
         image = ./wallpapers/blue-black-hole.png;
         polarity = "dark";
 
+        # base16Scheme = {
+        #   # scheme = "chilly";
+        #   # author = "Y2kun";
+        #   base00 = "050F0f";
+        #   base01 = "052c2f";
+        #   base02 = "0b2f35";
+        #   base03 = "124047";
+        #   base04 = "1b525a";
+        #   base05 = "25636f";
+        #   base06 = "30748f";
+        #   base07 = "3d848f";
+        #   base08 = "4ca5af";
+        #   base09 = "c47d80";
+        #   base0A = "a49356";
+        #   base0B = "7aa75c";
+        #   base0C = "5daf80";
+        #   base0D = "5fa5bb";
+        #   base0E = "7e90dd";
+        #   base0F = "a97bdf";
+        # };
+
         base16Scheme = {
           # scheme = "chilly";
           # author = "Y2kun";
-          base00 = "050F0f";
+          base00 = "050f0f";
           base01 = "052c2f";
           base02 = "0b2f35";
           base03 = "124047";
           base04 = "1b525a";
-          base05 = "25636f";
-          base06 = "30748f";
-          base07 = "3d848f";
-          base08 = "4ca5af";
-          base09 = "c47d80";
-          base0A = "a49356";
-          base0B = "7aa75c";
-          base0C = "5daf80";
-          base0D = "5fa5bb";
-          base0E = "7e90dd";
-          base0F = "a97bdf";
+          base05 = "3d9b9f";
+          base06 = "4fa3b0";
+          base07 = "5fb8b0";
+          base08 = "6fd3d7";
+          base09 = "d69a8a";
+          base0A = "c6a95a";
+          base0B = "a8c77a";
+          base0C = "7fe5a0";
+          base0D = "7fb8d0";
+          base0E = "afafee";
+          base0F = "c6a3e0";
         };
-
-        # base16Scheme = { # icy
-        #   base00 = "021012";
-        #   base01 = "031619";
-        #   base02 = "041f23";
-        #   base03 = "052e34";
-        #   base04 = "064048";
-        #   base05 = "095b67";
-        #   base06 = "0c7c8c";
-        #   base07 = "109cb0";
-        #   base08 = "16c1d9";
-        #   base09 = "b3ebf2";
-        #   base0A = "80deea";
-        #   base0B = "4dd0e1";
-        #   base0C = "26c6da";
-        #   base0D = "00bcd4";
-        #   base0E = "00acc1";
-        #   base0F = "0097a7";
-        # };
 
         # fonts = {
         #   serif = {
