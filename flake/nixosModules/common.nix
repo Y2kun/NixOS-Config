@@ -258,6 +258,7 @@ in {
             "gc" = "sudo nix-collect-garbage --delete-old";
             # "ls" = "ls -ach";
             "ls" = "eza";
+            "cl" = "clear";
             "eza" = "eza -a --icons";
             # "neofetch" = "fastfetch";
             "ff" = "fastfetch";
