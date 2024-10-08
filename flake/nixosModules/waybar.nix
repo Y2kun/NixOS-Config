@@ -154,7 +154,7 @@
               # car = "";
               default = ["🔈" "🔉" "🔊"];
             };
-            on-click-left = "pavucontrol";
+            on-click-left = "wezterm -e pavucontrol";
           };
 
           disk = {

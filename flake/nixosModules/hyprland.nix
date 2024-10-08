@@ -24,6 +24,7 @@
         input = {
           kb_layout = "jp, de";
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
+          kb_variant = "nodeadkeys";
           touchpad.disable_while_typing = false;
         };
 
@@ -35,7 +36,7 @@
           "[workspace 1 silent] ${pkgs.firefox}/bin/firefox"
           "[workspace 2 silent] ${pkgs.wezterm}/bin/wezterm"
           "[workspace 9 silent] ${pkgs.xfce.thunar}/bin/thunar"
-          "[workspace 10 silent] ${pkgs.discord-canary}/bin/discordcanary"
+          # "[workspace 10 silent] ${pkgs.discord-canary}/bin/discordcanary"
         ];
 
         "$mod" = "SUPER";
