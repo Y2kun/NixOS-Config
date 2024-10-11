@@ -480,7 +480,7 @@ in {
       ruby # high level object oriented language
       rubyPackages.solargraph # lsp for ruby
       signal-desktop
-      speedtest-rs # Intertet speed test with a few extra infos
+      speedtest-go # Intertet speed test with a few extra infos
       swww # for backgrounds
       syncthing # for syncing data between devices
       syncthingtray-minimal # the convinient tray for syncthing

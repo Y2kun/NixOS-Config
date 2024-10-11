@@ -22,7 +22,7 @@
         };
 
         input = {
-          kb_layout = "jp, de";
+          kb_layout = "jp, de, us";
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
           kb_variant = "nodeadkeys";
           touchpad.disable_while_typing = false;
@@ -60,7 +60,8 @@
 
           # "$mod, mouse_down, workspace, e-1"
           "$mod, F, fullscreen"
-          "$mod, V, togglefloating,"
+          "$mod, V, togglefloating"
+          "$mod, G, togglegroup"
 
           # Switch workspaces with super + [0-9]
           "$mod, 1, workspace, 1"

@@ -35,7 +35,7 @@
       createHome = true;
       home = "/home/yuma";
       description = "Yuma Fellinger";
-      extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video"];
+      extraGroups = ["networkmanager" "wheel" "kvm" "audio" "video" "libvirtd"];
       hashedPassword = "$y$j9T$oNlXtRUJQNJDNQmHXPWxk1$Y0i0NUdvHVgJA3jVKCGSTO3B3ecZyX5n2ss.v.PoZE7";
     };
 
@@ -56,8 +56,6 @@
       protonvpn-gui
       qemu
       teams-for-linux
-      # virtualbox
-      virt-manager
       wine
       jetbrains.goland
       jetbrains.idea-ultimate
@@ -100,6 +98,7 @@
 
     virtualisation.kvmgt.enable = true;
     virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
 
     # Bootloader.
     boot = {
