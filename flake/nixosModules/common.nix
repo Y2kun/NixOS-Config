@@ -138,7 +138,7 @@ in {
           # author = "Y2kun";
           base00 = "050f0f";
           base01 = "052c2f";
-          base02 = "0b2f35";
+          base02 = "0b3f40";
           base03 = "124047";
           base04 = "1b525a";
           base05 = "3d9b9f";
