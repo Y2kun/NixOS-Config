@@ -456,8 +456,8 @@ in {
       unstable.krita # In some ways better than gimp
       # libreoffice # it's libre office
       # lite-xl # editor i used for lobster
-      lutris # Games launcher
-      winetricks
+      # lutris # Games launcher
+      # winetricks
       # magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
