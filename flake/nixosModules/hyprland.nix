@@ -22,7 +22,7 @@
         };
 
         input = {
-          kb_layout = "jp, de, us";
+          kb_layout = "jp, de";
           kb_options = "ctrl:nocaps, grp:alt_shift_toggle";
           kb_variant = "nodeadkeys";
           touchpad.disable_while_typing = false;

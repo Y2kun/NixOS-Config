@@ -1,6 +1,4 @@
-{inputs, ...}: let
-  aagl = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/release-24.05.tar.gz");
-in {
+{inputs, ...}: {
   flake.nixosModules.lambda = {
     name,
     config,
@@ -11,7 +9,6 @@ in {
   }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
-      aagl.module
     ];
 
     system.stateVersion = "22.05";
@@ -30,8 +27,6 @@ in {
       enable = true;
       xwayland.enable = true;
     };
-
-    programs.anime-game-launcher.enable = true;
 
     users.users.yuma = {
       isNormalUser = true;
