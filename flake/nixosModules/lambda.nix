@@ -9,6 +9,7 @@
   }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
+      inputs.aagl.nixosModules.default
     ];
 
     system.stateVersion = "22.05";
@@ -28,6 +29,8 @@
       xwayland.enable = true;
     };
 
+    programs.honkers-railway-launcher.enable = true;
+
     users.users.yuma = {
       isNormalUser = true;
       name = "yuma";
@@ -45,6 +48,7 @@
         # withOpenASAR = true;
         withVencord = true;
       })
+      staruml
 
       # wireshark
       # lazydocker
