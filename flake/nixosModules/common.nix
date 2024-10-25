@@ -260,11 +260,8 @@ in {
             "ls" = "eza";
             "cl" = "clear";
             "eza" = "eza -a --icons";
-            # "neofetch" = "fastfetch";
             "ff" = "fastfetch";
             "mc" = "musikcube";
-            "tm" = "tmatrix -s 17";
-            "clock" = "tty-clock -sc";
             "draw" = "wezterm imgcat";
           };
 
@@ -458,7 +455,7 @@ in {
       # lite-xl # editor i used for lobster
       # lutris # Games launcher
       # winetricks
-      # magic-wormhole # for transfering data
+      magic-wormhole # for transfering data
       marksman # Markdown LSP
       # morgen # calendar
       musikcube # Music player from Command-line
@@ -488,7 +485,7 @@ in {
       tig # display the commit history of a git repo, installed for my father
       # tmatrix # cool looking matrix effect
       tree # lists directory as a tree
-      tty-clock # a clock in the terminal
+      # tty-clock # a clock in the terminal
       units # converts units
       unzip # unzips something
       vlc # plays media
