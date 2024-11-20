@@ -24,12 +24,13 @@
       # videoDrivers = ["amdgpu"];
     };
 
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
+    programs = {
+      hyprland = {
+        enable = true;
+        xwayland.enable = true;
+      };
+      honkers-railway-launcher.enable = true;
     };
-
-    programs.honkers-railway-launcher.enable = true;
 
     users.users.yuma = {
       isNormalUser = true;
@@ -49,6 +50,9 @@
         withVencord = true;
       })
       staruml
+      geogebra6
+      ytmdl
+      devenv
 
       # wireshark
       # lazydocker
@@ -63,6 +67,7 @@
       wine
       jetbrains.goland
       jetbrains.idea-ultimate
+      jetbrains.datagrip
       scenebuilder
       ciscoPacketTracer8
     ];

@@ -394,6 +394,7 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
+      unstable.spotube
       libGL
       # meson
       # wayland-protocol
