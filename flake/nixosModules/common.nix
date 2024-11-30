@@ -343,7 +343,7 @@ in {
       radicale.enable = false;
       udisks2.enable = true;
 
-      hardware.openrgb.enable = true;
+      # hardware.openrgb.enable = true;
       displayManager.sddm.enable = true;
       # displayManager.sddm.wayland.enable = true;
 
@@ -394,6 +394,7 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
+      ttyper
       unstable.spotube
       libGL
       # meson
@@ -413,7 +414,6 @@ in {
       # dotnetPackages.Nuget
       # waypaper
       # waybar-mpris
-      # ytdownloader
       gvfs
       go
       unstable.osu-lazer-bin
@@ -461,7 +461,6 @@ in {
       # morgen # calendar
       musikcube # Music player from Command-line
       ncdu # manualy find heavy data
-      # networkmanagerapplet # For easily managing the local network
       nil # lsp for nix
       # obsidian # where all my personal notes are
       # signal-desktop # a messenging app
@@ -469,10 +468,9 @@ in {
       # openshot-qt # video editor
       pavucontrol # audio manager
       pfetch # small, fast neofetch, for shell init
-      # kmail # Mail
       prismlauncher # My minecraft instance manager of choice
       puddletag # song metadata editor
-      qalculate-gtk # advanced calculator
+      qalculate-qt # advanced calculator
       # qjackctl
       ripgrep # find specific stuff, looks and functions better than fd
       ruby # high level object oriented language

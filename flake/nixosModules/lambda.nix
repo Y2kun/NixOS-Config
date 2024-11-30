@@ -44,11 +44,11 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # armcord
-      (discord-canary.override {
-        # withOpenASAR = true;
-        withVencord = true;
-      })
+      # (discord-canary.override {
+      #   # withOpenASAR = true;
+      #   withVencord = true;
+      # })
+      legcord
       staruml
       geogebra6
       ytmdl

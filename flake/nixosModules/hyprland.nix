@@ -37,6 +37,7 @@
           "[workspace 2 silent] ${pkgs.wezterm}/bin/wezterm"
           "[workspace 9 silent] ${pkgs.xfce.thunar}/bin/thunar"
           # "[workspace 10 silent] ${pkgs.discord-canary}/bin/discordcanary"
+          "[workspace 10 silent] ${pkgs.legcord}/bin/legcord"
         ];
 
         "$mod" = "SUPER";
